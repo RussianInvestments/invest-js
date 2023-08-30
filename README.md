@@ -6,11 +6,11 @@ SDK для работы с OpenAPI Тинькофф Инвестиции, кот
 
 ## Документация
 
-Доступна по [ссылке](https://tinkoff.github.io/investAPI/)
+Доступна по [ссылке](https://russianinvestments.github.io/investAPI/)
 
 ## Авторизация
 
-Более полную информацию можно просмотреть в [документации](https://tinkoff.github.io/invest-openapi/auth/)
+Более полную информацию можно просмотреть в [документации](https://russianinvestments.github.io/investAPI/token/)
 
 1. Перейдите в [настройки](https://tinkoff.ru/invest/settings/) блок "Токен для OpenAPI"
 2. Функция "Подтверждение сделок кодом" должна быть отключена
@@ -32,7 +32,7 @@ SDK для работы с OpenAPI Тинькофф Инвестиции, кот
 
 Для использования _Sandbox_ необходимо передать в apiURL и в secretToken url
 эндпоинта с апи sandbox'а и токен для песочницы.
-Более подробно в [документации](https://tinkoff.github.io/invest-openapi/env/)
+Более подробно в [документации](https://russianinvestments.github.io/investAPI/head-sandbox/)
 
 ```typescript
 import { OpenAPIClient } from '@tinkoff/invest-js';
