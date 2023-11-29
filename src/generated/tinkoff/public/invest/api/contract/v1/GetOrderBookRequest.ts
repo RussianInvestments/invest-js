@@ -5,10 +5,14 @@ export interface GetOrderBookRequest {
   'figi'?: (string);
   'depth'?: (number);
   'instrumentId'?: (string);
+  '_figi'?: "figi";
+  '_instrumentId'?: "instrumentId";
 }
 
 export interface GetOrderBookRequest__Output {
-  'figi': (string);
+  'figi'?: (string);
   'depth': (number);
-  'instrumentId': (string);
+  'instrumentId'?: (string);
+  '_figi': "figi";
+  '_instrumentId': "instrumentId";
 }

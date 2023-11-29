@@ -42,6 +42,7 @@ export interface Etf {
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
   'blockedTcaFlag'?: (boolean);
+  'liquidityFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
 }
@@ -83,6 +84,7 @@ export interface Etf__Output {
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);
   'blockedTcaFlag': (boolean);
+  'liquidityFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
 }

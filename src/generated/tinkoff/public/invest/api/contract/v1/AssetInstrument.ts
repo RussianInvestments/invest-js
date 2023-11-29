@@ -11,6 +11,7 @@ export interface AssetInstrument {
   'classCode'?: (string);
   'links'?: (_tinkoff_public_invest_api_contract_v1_InstrumentLink)[];
   'instrumentKind'?: (_tinkoff_public_invest_api_contract_v1_InstrumentType | keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);
+  'positionUid'?: (string);
 }
 
 export interface AssetInstrument__Output {
@@ -21,4 +22,5 @@ export interface AssetInstrument__Output {
   'classCode': (string);
   'links': (_tinkoff_public_invest_api_contract_v1_InstrumentLink__Output)[];
   'instrumentKind': (keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);
+  'positionUid': (string);
 }

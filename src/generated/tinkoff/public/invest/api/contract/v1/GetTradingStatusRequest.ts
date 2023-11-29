@@ -4,9 +4,13 @@
 export interface GetTradingStatusRequest {
   'figi'?: (string);
   'instrumentId'?: (string);
+  '_figi'?: "figi";
+  '_instrumentId'?: "instrumentId";
 }
 
 export interface GetTradingStatusRequest__Output {
-  'figi': (string);
-  'instrumentId': (string);
+  'figi'?: (string);
+  'instrumentId'?: (string);
+  '_figi': "figi";
+  '_instrumentId': "instrumentId";
 }

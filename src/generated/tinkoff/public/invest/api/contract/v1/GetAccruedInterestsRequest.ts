@@ -6,10 +6,12 @@ export interface GetAccruedInterestsRequest {
   'figi'?: (string);
   'from'?: (_google_protobuf_Timestamp | null);
   'to'?: (_google_protobuf_Timestamp | null);
+  'instrumentId'?: (string);
 }
 
 export interface GetAccruedInterestsRequest__Output {
   'figi': (string);
   'from': (_google_protobuf_Timestamp__Output | null);
   'to': (_google_protobuf_Timestamp__Output | null);
+  'instrumentId': (string);
 }

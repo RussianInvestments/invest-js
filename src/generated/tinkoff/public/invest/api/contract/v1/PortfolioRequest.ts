@@ -12,9 +12,11 @@ export enum _tinkoff_public_invest_api_contract_v1_PortfolioRequest_CurrencyRequ
 export interface PortfolioRequest {
   'accountId'?: (string);
   'currency'?: (_tinkoff_public_invest_api_contract_v1_PortfolioRequest_CurrencyRequest | keyof typeof _tinkoff_public_invest_api_contract_v1_PortfolioRequest_CurrencyRequest);
+  '_currency'?: "currency";
 }
 
 export interface PortfolioRequest__Output {
   'accountId': (string);
-  'currency': (keyof typeof _tinkoff_public_invest_api_contract_v1_PortfolioRequest_CurrencyRequest);
+  'currency'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_PortfolioRequest_CurrencyRequest);
+  '_currency': "currency";
 }
