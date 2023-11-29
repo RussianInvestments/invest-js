@@ -10,8 +10,31 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   google: {
+    api: {
+      FieldBehavior: EnumTypeDefinition
+    }
     protobuf: {
+      DescriptorProto: MessageTypeDefinition
+      EnumDescriptorProto: MessageTypeDefinition
+      EnumOptions: MessageTypeDefinition
+      EnumValueDescriptorProto: MessageTypeDefinition
+      EnumValueOptions: MessageTypeDefinition
+      FieldDescriptorProto: MessageTypeDefinition
+      FieldOptions: MessageTypeDefinition
+      FileDescriptorProto: MessageTypeDefinition
+      FileDescriptorSet: MessageTypeDefinition
+      FileOptions: MessageTypeDefinition
+      GeneratedCodeInfo: MessageTypeDefinition
+      MessageOptions: MessageTypeDefinition
+      MethodDescriptorProto: MessageTypeDefinition
+      MethodOptions: MessageTypeDefinition
+      OneofDescriptorProto: MessageTypeDefinition
+      OneofOptions: MessageTypeDefinition
+      ServiceDescriptorProto: MessageTypeDefinition
+      ServiceOptions: MessageTypeDefinition
+      SourceCodeInfo: MessageTypeDefinition
       Timestamp: MessageTypeDefinition
+      UninterpretedOption: MessageTypeDefinition
     }
   }
   tinkoff: {
@@ -22,6 +45,10 @@ export interface ProtoGrpcType {
             v1: {
               CancelOrderRequest: MessageTypeDefinition
               CancelOrderResponse: MessageTypeDefinition
+              GetMaxLotsRequest: MessageTypeDefinition
+              GetMaxLotsResponse: MessageTypeDefinition
+              GetOrderPriceRequest: MessageTypeDefinition
+              GetOrderPriceResponse: MessageTypeDefinition
               GetOrderStateRequest: MessageTypeDefinition
               GetOrdersRequest: MessageTypeDefinition
               GetOrdersResponse: MessageTypeDefinition
@@ -36,6 +63,8 @@ export interface ProtoGrpcType {
               OrderType: EnumTypeDefinition
               OrdersService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_OrdersServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_OrdersServiceDefinition }
               OrdersStreamService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_OrdersStreamServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_OrdersStreamServiceDefinition }
+              Page: MessageTypeDefinition
+              PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
               PostOrderRequest: MessageTypeDefinition
               PostOrderResponse: MessageTypeDefinition
@@ -43,6 +72,7 @@ export interface ProtoGrpcType {
               Quotation: MessageTypeDefinition
               ReplaceOrderRequest: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
+              TimeInForceType: EnumTypeDefinition
               TradesStreamRequest: MessageTypeDefinition
               TradesStreamResponse: MessageTypeDefinition
             }

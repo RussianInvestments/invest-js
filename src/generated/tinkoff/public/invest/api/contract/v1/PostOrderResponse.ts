@@ -25,6 +25,7 @@ export interface PostOrderResponse {
   'message'?: (string);
   'initialOrderPricePt'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'instrumentUid'?: (string);
+  'orderRequestId'?: (string);
 }
 
 export interface PostOrderResponse__Output {
@@ -45,4 +46,5 @@ export interface PostOrderResponse__Output {
   'message': (string);
   'initialOrderPricePt': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'instrumentUid': (string);
+  'orderRequestId': (string);
 }

@@ -28,6 +28,7 @@ export interface OrderState {
   'orderType'?: (_tinkoff_public_invest_api_contract_v1_OrderType | keyof typeof _tinkoff_public_invest_api_contract_v1_OrderType);
   'orderDate'?: (_google_protobuf_Timestamp | null);
   'instrumentUid'?: (string);
+  'orderRequestId'?: (string);
 }
 
 export interface OrderState__Output {
@@ -50,4 +51,5 @@ export interface OrderState__Output {
   'orderType': (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderType);
   'orderDate': (_google_protobuf_Timestamp__Output | null);
   'instrumentUid': (string);
+  'orderRequestId': (string);
 }

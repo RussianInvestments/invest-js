@@ -16,18 +16,36 @@ export interface GetOperationsByCursorRequest {
   'withoutCommissions'?: (boolean);
   'withoutTrades'?: (boolean);
   'withoutOvernights'?: (boolean);
+  '_instrumentId'?: "instrumentId";
+  '_from'?: "from";
+  '_to'?: "to";
+  '_cursor'?: "cursor";
+  '_limit'?: "limit";
+  '_state'?: "state";
+  '_withoutCommissions'?: "withoutCommissions";
+  '_withoutTrades'?: "withoutTrades";
+  '_withoutOvernights'?: "withoutOvernights";
 }
 
 export interface GetOperationsByCursorRequest__Output {
   'accountId': (string);
-  'instrumentId': (string);
-  'from': (_google_protobuf_Timestamp__Output | null);
-  'to': (_google_protobuf_Timestamp__Output | null);
-  'cursor': (string);
-  'limit': (number);
+  'instrumentId'?: (string);
+  'from'?: (_google_protobuf_Timestamp__Output | null);
+  'to'?: (_google_protobuf_Timestamp__Output | null);
+  'cursor'?: (string);
+  'limit'?: (number);
   'operationTypes': (keyof typeof _tinkoff_public_invest_api_contract_v1_OperationType)[];
-  'state': (keyof typeof _tinkoff_public_invest_api_contract_v1_OperationState);
-  'withoutCommissions': (boolean);
-  'withoutTrades': (boolean);
-  'withoutOvernights': (boolean);
+  'state'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_OperationState);
+  'withoutCommissions'?: (boolean);
+  'withoutTrades'?: (boolean);
+  'withoutOvernights'?: (boolean);
+  '_instrumentId': "instrumentId";
+  '_from': "from";
+  '_to': "to";
+  '_cursor': "cursor";
+  '_limit': "limit";
+  '_state': "state";
+  '_withoutCommissions': "withoutCommissions";
+  '_withoutTrades': "withoutTrades";
+  '_withoutOvernights': "withoutOvernights";
 }

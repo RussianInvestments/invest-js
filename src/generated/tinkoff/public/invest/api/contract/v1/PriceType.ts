@@ -1,4 +1,4 @@
-// Original file: investAPI/src/docs/contracts/orders.proto
+// Original file: investAPI/src/docs/contracts/common.proto
 
 export enum PriceType {
   PRICE_TYPE_UNSPECIFIED = 0,
