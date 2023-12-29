@@ -3,8 +3,12 @@
 
 export interface EditFavoritesRequestInstrument {
   'figi'?: (string);
+  'instrumentId'?: (string);
+  '_figi'?: "figi";
 }
 
 export interface EditFavoritesRequestInstrument__Output {
-  'figi': (string);
+  'figi'?: (string);
+  'instrumentId': (string);
+  '_figi': "figi";
 }

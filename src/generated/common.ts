@@ -20,8 +20,12 @@ export interface ProtoGrpcType {
             v1: {
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
+              Page: MessageTypeDefinition
+              PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
             }
           }

@@ -11,6 +11,8 @@ export interface ReplaceOrderRequest {
   'quantity'?: (number | string | Long);
   'price'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'priceType'?: (_tinkoff_public_invest_api_contract_v1_PriceType | keyof typeof _tinkoff_public_invest_api_contract_v1_PriceType);
+  '_price'?: "price";
+  '_priceType'?: "priceType";
 }
 
 export interface ReplaceOrderRequest__Output {
@@ -18,6 +20,8 @@ export interface ReplaceOrderRequest__Output {
   'orderId': (string);
   'idempotencyKey': (string);
   'quantity': (string);
-  'price': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
-  'priceType': (keyof typeof _tinkoff_public_invest_api_contract_v1_PriceType);
+  'price'?: (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'priceType'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_PriceType);
+  '_price': "price";
+  '_priceType': "priceType";
 }

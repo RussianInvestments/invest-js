@@ -9,8 +9,31 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   google: {
+    api: {
+      FieldBehavior: EnumTypeDefinition
+    }
     protobuf: {
+      DescriptorProto: MessageTypeDefinition
+      EnumDescriptorProto: MessageTypeDefinition
+      EnumOptions: MessageTypeDefinition
+      EnumValueDescriptorProto: MessageTypeDefinition
+      EnumValueOptions: MessageTypeDefinition
+      FieldDescriptorProto: MessageTypeDefinition
+      FieldOptions: MessageTypeDefinition
+      FileDescriptorProto: MessageTypeDefinition
+      FileDescriptorSet: MessageTypeDefinition
+      FileOptions: MessageTypeDefinition
+      GeneratedCodeInfo: MessageTypeDefinition
+      MessageOptions: MessageTypeDefinition
+      MethodDescriptorProto: MessageTypeDefinition
+      MethodOptions: MessageTypeDefinition
+      OneofDescriptorProto: MessageTypeDefinition
+      OneofOptions: MessageTypeDefinition
+      ServiceDescriptorProto: MessageTypeDefinition
+      ServiceOptions: MessageTypeDefinition
+      SourceCodeInfo: MessageTypeDefinition
       Timestamp: MessageTypeDefinition
+      UninterpretedOption: MessageTypeDefinition
     }
   }
   tinkoff: {
@@ -54,6 +77,7 @@ export interface ProtoGrpcType {
               EtfResponse: MessageTypeDefinition
               EtfsResponse: MessageTypeDefinition
               FavoriteInstrument: MessageTypeDefinition
+              FilterOptionsRequest: MessageTypeDefinition
               FindInstrumentRequest: MessageTypeDefinition
               FindInstrumentResponse: MessageTypeDefinition
               Future: MessageTypeDefinition
@@ -61,19 +85,32 @@ export interface ProtoGrpcType {
               FuturesResponse: MessageTypeDefinition
               GetAccruedInterestsRequest: MessageTypeDefinition
               GetAccruedInterestsResponse: MessageTypeDefinition
+              GetAssetFundamentalsRequest: MessageTypeDefinition
+              GetAssetFundamentalsResponse: MessageTypeDefinition
+              GetAssetReportsRequest: MessageTypeDefinition
+              GetAssetReportsResponse: MessageTypeDefinition
               GetBondCouponsRequest: MessageTypeDefinition
               GetBondCouponsResponse: MessageTypeDefinition
+              GetBondEventsRequest: MessageTypeDefinition
+              GetBondEventsResponse: MessageTypeDefinition
               GetBrandRequest: MessageTypeDefinition
               GetBrandsRequest: MessageTypeDefinition
               GetBrandsResponse: MessageTypeDefinition
+              GetConsensusForecastsRequest: MessageTypeDefinition
+              GetConsensusForecastsResponse: MessageTypeDefinition
               GetCountriesRequest: MessageTypeDefinition
               GetCountriesResponse: MessageTypeDefinition
               GetDividendsRequest: MessageTypeDefinition
               GetDividendsResponse: MessageTypeDefinition
               GetFavoritesRequest: MessageTypeDefinition
               GetFavoritesResponse: MessageTypeDefinition
+              GetForecastRequest: MessageTypeDefinition
+              GetForecastResponse: MessageTypeDefinition
               GetFuturesMarginRequest: MessageTypeDefinition
               GetFuturesMarginResponse: MessageTypeDefinition
+              IndicativeResponse: MessageTypeDefinition
+              IndicativesRequest: MessageTypeDefinition
+              IndicativesResponse: MessageTypeDefinition
               Instrument: MessageTypeDefinition
               InstrumentIdType: EnumTypeDefinition
               InstrumentLink: MessageTypeDefinition
@@ -92,9 +129,14 @@ export interface ProtoGrpcType {
               OptionSettlementType: EnumTypeDefinition
               OptionStyle: EnumTypeDefinition
               OptionsResponse: MessageTypeDefinition
+              Page: MessageTypeDefinition
+              PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               RealExchange: EnumTypeDefinition
+              Recommendation: EnumTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               RiskLevel: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               Share: MessageTypeDefinition

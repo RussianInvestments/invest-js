@@ -55,6 +55,7 @@ export interface Bond {
   'weekendFlag'?: (boolean);
   'blockedTcaFlag'?: (boolean);
   'subordinatedFlag'?: (boolean);
+  'liquidityFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
   'riskLevel'?: (_tinkoff_public_invest_api_contract_v1_RiskLevel | keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);
@@ -107,6 +108,7 @@ export interface Bond__Output {
   'weekendFlag': (boolean);
   'blockedTcaFlag': (boolean);
   'subordinatedFlag': (boolean);
+  'liquidityFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
   'riskLevel': (keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);

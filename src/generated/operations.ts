@@ -10,8 +10,31 @@ type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> 
 
 export interface ProtoGrpcType {
   google: {
+    api: {
+      FieldBehavior: EnumTypeDefinition
+    }
     protobuf: {
+      DescriptorProto: MessageTypeDefinition
+      EnumDescriptorProto: MessageTypeDefinition
+      EnumOptions: MessageTypeDefinition
+      EnumValueDescriptorProto: MessageTypeDefinition
+      EnumValueOptions: MessageTypeDefinition
+      FieldDescriptorProto: MessageTypeDefinition
+      FieldOptions: MessageTypeDefinition
+      FileDescriptorProto: MessageTypeDefinition
+      FileDescriptorSet: MessageTypeDefinition
+      FileOptions: MessageTypeDefinition
+      GeneratedCodeInfo: MessageTypeDefinition
+      MessageOptions: MessageTypeDefinition
+      MethodDescriptorProto: MessageTypeDefinition
+      MethodOptions: MessageTypeDefinition
+      OneofDescriptorProto: MessageTypeDefinition
+      OneofOptions: MessageTypeDefinition
+      ServiceDescriptorProto: MessageTypeDefinition
+      ServiceOptions: MessageTypeDefinition
+      SourceCodeInfo: MessageTypeDefinition
       Timestamp: MessageTypeDefinition
+      UninterpretedOption: MessageTypeDefinition
     }
   }
   tinkoff: {
@@ -50,6 +73,8 @@ export interface ProtoGrpcType {
               OperationsResponse: MessageTypeDefinition
               OperationsService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_OperationsServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_OperationsServiceDefinition }
               OperationsStreamService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_OperationsStreamServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_OperationsStreamServiceDefinition }
+              Page: MessageTypeDefinition
+              PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
               PortfolioPosition: MessageTypeDefinition
               PortfolioRequest: MessageTypeDefinition
@@ -70,7 +95,9 @@ export interface ProtoGrpcType {
               PositionsStreamResponse: MessageTypeDefinition
               PositionsSubscriptionResult: MessageTypeDefinition
               PositionsSubscriptionStatus: MessageTypeDefinition
+              PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               VirtualPortfolioPosition: MessageTypeDefinition
               WithdrawLimitsRequest: MessageTypeDefinition

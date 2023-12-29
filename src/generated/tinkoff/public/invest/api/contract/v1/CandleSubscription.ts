@@ -8,6 +8,7 @@ export interface CandleSubscription {
   'interval'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionInterval | keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionInterval);
   'subscriptionStatus'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionStatus);
   'instrumentUid'?: (string);
+  'waitingClose'?: (boolean);
 }
 
 export interface CandleSubscription__Output {
@@ -15,4 +16,5 @@ export interface CandleSubscription__Output {
   'interval': (keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionInterval);
   'subscriptionStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionStatus);
   'instrumentUid': (string);
+  'waitingClose': (boolean);
 }

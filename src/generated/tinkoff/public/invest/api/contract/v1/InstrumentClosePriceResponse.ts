@@ -7,6 +7,7 @@ export interface InstrumentClosePriceResponse {
   'figi'?: (string);
   'instrumentUid'?: (string);
   'price'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'eveningSessionPrice'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'time'?: (_google_protobuf_Timestamp | null);
 }
 
@@ -14,5 +15,6 @@ export interface InstrumentClosePriceResponse__Output {
   'figi': (string);
   'instrumentUid': (string);
   'price': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'eveningSessionPrice': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'time': (_google_protobuf_Timestamp__Output | null);
 }

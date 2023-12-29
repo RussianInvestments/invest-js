@@ -4,6 +4,7 @@ import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quo
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
 
 export interface Future {
   'figi'?: (string);
@@ -46,6 +47,9 @@ export interface Future {
   'blockedTcaFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
+  'initialMarginOnBuy'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
+  'initialMarginOnSell'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
+  'minPriceIncrementAmount'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
 }
 
 export interface Future__Output {
@@ -89,4 +93,7 @@ export interface Future__Output {
   'blockedTcaFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
+  'initialMarginOnBuy': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'initialMarginOnSell': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'minPriceIncrementAmount': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
 }

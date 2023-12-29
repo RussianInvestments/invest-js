@@ -9,6 +9,8 @@ export interface GetTradingStatusResponse {
   'marketOrderAvailableFlag'?: (boolean);
   'apiTradeAvailableFlag'?: (boolean);
   'instrumentUid'?: (string);
+  'bestpriceOrderAvailableFlag'?: (boolean);
+  'onlyBestPrice'?: (boolean);
 }
 
 export interface GetTradingStatusResponse__Output {
@@ -18,4 +20,6 @@ export interface GetTradingStatusResponse__Output {
   'marketOrderAvailableFlag': (boolean);
   'apiTradeAvailableFlag': (boolean);
   'instrumentUid': (string);
+  'bestpriceOrderAvailableFlag': (boolean);
+  'onlyBestPrice': (boolean);
 }
