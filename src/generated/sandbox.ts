@@ -138,6 +138,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ReplaceOrderRequest: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SandboxPayInRequest: MessageTypeDefinition
               SandboxPayInResponse: MessageTypeDefinition
               SandboxService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_SandboxServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_SandboxServiceDefinition }

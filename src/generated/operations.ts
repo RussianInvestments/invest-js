@@ -97,6 +97,7 @@ export interface ProtoGrpcType {
               PositionsSubscriptionStatus: MessageTypeDefinition
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               VirtualPortfolioPosition: MessageTypeDefinition
               WithdrawLimitsRequest: MessageTypeDefinition

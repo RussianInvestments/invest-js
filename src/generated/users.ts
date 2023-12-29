@@ -61,6 +61,7 @@ export interface ProtoGrpcType {
               Ping: MessageTypeDefinition
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               StreamLimit: MessageTypeDefinition
               UnaryLimit: MessageTypeDefinition

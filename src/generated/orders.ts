@@ -71,6 +71,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ReplaceOrderRequest: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               TimeInForceType: EnumTypeDefinition
               TradesStreamRequest: MessageTypeDefinition

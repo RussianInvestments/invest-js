@@ -56,6 +56,7 @@ export interface ProtoGrpcType {
               PostStopOrderResponse: MessageTypeDefinition
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               StopOrder: MessageTypeDefinition
               StopOrderDirection: EnumTypeDefinition

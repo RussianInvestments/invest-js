@@ -87,19 +87,30 @@ export interface ProtoGrpcType {
               GetAccruedInterestsResponse: MessageTypeDefinition
               GetAssetFundamentalsRequest: MessageTypeDefinition
               GetAssetFundamentalsResponse: MessageTypeDefinition
+              GetAssetReportsRequest: MessageTypeDefinition
+              GetAssetReportsResponse: MessageTypeDefinition
               GetBondCouponsRequest: MessageTypeDefinition
               GetBondCouponsResponse: MessageTypeDefinition
+              GetBondEventsRequest: MessageTypeDefinition
+              GetBondEventsResponse: MessageTypeDefinition
               GetBrandRequest: MessageTypeDefinition
               GetBrandsRequest: MessageTypeDefinition
               GetBrandsResponse: MessageTypeDefinition
+              GetConsensusForecastsRequest: MessageTypeDefinition
+              GetConsensusForecastsResponse: MessageTypeDefinition
               GetCountriesRequest: MessageTypeDefinition
               GetCountriesResponse: MessageTypeDefinition
               GetDividendsRequest: MessageTypeDefinition
               GetDividendsResponse: MessageTypeDefinition
               GetFavoritesRequest: MessageTypeDefinition
               GetFavoritesResponse: MessageTypeDefinition
+              GetForecastRequest: MessageTypeDefinition
+              GetForecastResponse: MessageTypeDefinition
               GetFuturesMarginRequest: MessageTypeDefinition
               GetFuturesMarginResponse: MessageTypeDefinition
+              IndicativeResponse: MessageTypeDefinition
+              IndicativesRequest: MessageTypeDefinition
+              IndicativesResponse: MessageTypeDefinition
               Instrument: MessageTypeDefinition
               InstrumentIdType: EnumTypeDefinition
               InstrumentLink: MessageTypeDefinition
@@ -124,6 +135,8 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               RealExchange: EnumTypeDefinition
+              Recommendation: EnumTypeDefinition
+              ResponseMetadata: MessageTypeDefinition
               RiskLevel: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               Share: MessageTypeDefinition

@@ -5,6 +5,7 @@ import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, M
 import type { OrderDirection as _tinkoff_public_invest_api_contract_v1_OrderDirection } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderDirection';
 import type { OrderType as _tinkoff_public_invest_api_contract_v1_OrderType } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderType';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
+import type { ResponseMetadata as _tinkoff_public_invest_api_contract_v1_ResponseMetadata, ResponseMetadata__Output as _tinkoff_public_invest_api_contract_v1_ResponseMetadata__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ResponseMetadata';
 import type { Long } from '@grpc/proto-loader';
 
 export interface PostOrderResponse {
@@ -26,6 +27,7 @@ export interface PostOrderResponse {
   'initialOrderPricePt'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'instrumentUid'?: (string);
   'orderRequestId'?: (string);
+  'responseMetadata'?: (_tinkoff_public_invest_api_contract_v1_ResponseMetadata | null);
 }
 
 export interface PostOrderResponse__Output {
@@ -47,4 +49,5 @@ export interface PostOrderResponse__Output {
   'initialOrderPricePt': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'instrumentUid': (string);
   'orderRequestId': (string);
+  'responseMetadata': (_tinkoff_public_invest_api_contract_v1_ResponseMetadata__Output | null);
 }
