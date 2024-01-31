@@ -8,6 +8,8 @@ export interface FavoriteInstrument {
   'classCode'?: (string);
   'isin'?: (string);
   'instrumentType'?: (string);
+  'name'?: (string);
+  'uid'?: (string);
   'otcFlag'?: (boolean);
   'apiTradeAvailableFlag'?: (boolean);
   'instrumentKind'?: (_tinkoff_public_invest_api_contract_v1_InstrumentType | keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);
@@ -19,6 +21,8 @@ export interface FavoriteInstrument__Output {
   'classCode': (string);
   'isin': (string);
   'instrumentType': (string);
+  'name': (string);
+  'uid': (string);
   'otcFlag': (boolean);
   'apiTradeAvailableFlag': (boolean);
   'instrumentKind': (keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);

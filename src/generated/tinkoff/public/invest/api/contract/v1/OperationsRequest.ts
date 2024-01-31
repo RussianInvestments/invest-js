@@ -9,12 +9,20 @@ export interface OperationsRequest {
   'to'?: (_google_protobuf_Timestamp | null);
   'state'?: (_tinkoff_public_invest_api_contract_v1_OperationState | keyof typeof _tinkoff_public_invest_api_contract_v1_OperationState);
   'figi'?: (string);
+  '_from'?: "from";
+  '_to'?: "to";
+  '_state'?: "state";
+  '_figi'?: "figi";
 }
 
 export interface OperationsRequest__Output {
   'accountId': (string);
-  'from': (_google_protobuf_Timestamp__Output | null);
-  'to': (_google_protobuf_Timestamp__Output | null);
-  'state': (keyof typeof _tinkoff_public_invest_api_contract_v1_OperationState);
-  'figi': (string);
+  'from'?: (_google_protobuf_Timestamp__Output | null);
+  'to'?: (_google_protobuf_Timestamp__Output | null);
+  'state'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_OperationState);
+  'figi'?: (string);
+  '_from': "from";
+  '_to': "to";
+  '_state': "state";
+  '_figi': "figi";
 }

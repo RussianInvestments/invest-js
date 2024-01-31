@@ -6,10 +6,16 @@ export interface TradingSchedulesRequest {
   'exchange'?: (string);
   'from'?: (_google_protobuf_Timestamp | null);
   'to'?: (_google_protobuf_Timestamp | null);
+  '_exchange'?: "exchange";
+  '_from'?: "from";
+  '_to'?: "to";
 }
 
 export interface TradingSchedulesRequest__Output {
-  'exchange': (string);
-  'from': (_google_protobuf_Timestamp__Output | null);
-  'to': (_google_protobuf_Timestamp__Output | null);
+  'exchange'?: (string);
+  'from'?: (_google_protobuf_Timestamp__Output | null);
+  'to'?: (_google_protobuf_Timestamp__Output | null);
+  '_exchange': "exchange";
+  '_from': "from";
+  '_to': "to";
 }

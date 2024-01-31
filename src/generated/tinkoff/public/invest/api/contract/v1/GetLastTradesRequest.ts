@@ -7,11 +7,15 @@ export interface GetLastTradesRequest {
   'from'?: (_google_protobuf_Timestamp | null);
   'to'?: (_google_protobuf_Timestamp | null);
   'instrumentId'?: (string);
+  '_figi'?: "figi";
+  '_instrumentId'?: "instrumentId";
 }
 
 export interface GetLastTradesRequest__Output {
-  'figi': (string);
+  'figi'?: (string);
   'from': (_google_protobuf_Timestamp__Output | null);
   'to': (_google_protobuf_Timestamp__Output | null);
-  'instrumentId': (string);
+  'instrumentId'?: (string);
+  '_figi': "figi";
+  '_instrumentId': "instrumentId";
 }
