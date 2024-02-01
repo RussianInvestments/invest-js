@@ -6,6 +6,7 @@ import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, M
 import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
 import type { ShareType as _tinkoff_public_invest_api_contract_v1_ShareType } from '../../../../../../tinkoff/public/invest/api/contract/v1/ShareType';
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Share {
@@ -42,6 +43,7 @@ export interface Share {
   'uid'?: (string);
   'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
+  'assetUid'?: (string);
   'forIisFlag'?: (boolean);
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
@@ -49,6 +51,7 @@ export interface Share {
   'liquidityFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
+  'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
 }
 
 export interface Share__Output {
@@ -85,6 +88,7 @@ export interface Share__Output {
   'uid': (string);
   'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid': (string);
+  'assetUid': (string);
   'forIisFlag': (boolean);
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);
@@ -92,4 +96,5 @@ export interface Share__Output {
   'liquidityFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
+  'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
 }

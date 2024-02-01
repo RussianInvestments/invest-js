@@ -40,6 +40,7 @@ export interface PostStopOrderRequest {
   'takeProfitType'?: (_tinkoff_public_invest_api_contract_v1_TakeProfitType | keyof typeof _tinkoff_public_invest_api_contract_v1_TakeProfitType);
   'trailingData'?: (_tinkoff_public_invest_api_contract_v1_PostStopOrderRequest_TrailingData | null);
   'priceType'?: (_tinkoff_public_invest_api_contract_v1_PriceType | keyof typeof _tinkoff_public_invest_api_contract_v1_PriceType);
+  'orderId'?: (string);
   '_figi'?: "figi";
   '_price'?: "price";
   '_stopPrice'?: "stopPrice";
@@ -61,6 +62,7 @@ export interface PostStopOrderRequest__Output {
   'takeProfitType': (keyof typeof _tinkoff_public_invest_api_contract_v1_TakeProfitType);
   'trailingData': (_tinkoff_public_invest_api_contract_v1_PostStopOrderRequest_TrailingData__Output | null);
   'priceType': (keyof typeof _tinkoff_public_invest_api_contract_v1_PriceType);
+  'orderId': (string);
   '_figi': "figi";
   '_price': "price";
   '_stopPrice': "stopPrice";

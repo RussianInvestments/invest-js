@@ -44,6 +44,7 @@ export interface ProtoGrpcType {
           contract: {
             v1: {
               AccountSubscriptionStatus: MessageTypeDefinition
+              BrandData: MessageTypeDefinition
               BrokerReport: MessageTypeDefinition
               BrokerReportRequest: MessageTypeDefinition
               BrokerReportResponse: MessageTypeDefinition

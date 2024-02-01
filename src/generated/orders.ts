@@ -43,6 +43,7 @@ export interface ProtoGrpcType {
         api: {
           contract: {
             v1: {
+              BrandData: MessageTypeDefinition
               CancelOrderRequest: MessageTypeDefinition
               CancelOrderResponse: MessageTypeDefinition
               GetMaxLotsRequest: MessageTypeDefinition

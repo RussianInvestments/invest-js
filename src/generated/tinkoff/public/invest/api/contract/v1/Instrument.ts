@@ -5,6 +5,7 @@ import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_Se
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
 import type { InstrumentType as _tinkoff_public_invest_api_contract_v1_InstrumentType } from '../../../../../../tinkoff/public/invest/api/contract/v1/InstrumentType';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
+import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 
 export interface Instrument {
   'figi'?: (string);
@@ -34,6 +35,7 @@ export interface Instrument {
   'uid'?: (string);
   'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
+  'assetUid'?: (string);
   'forIisFlag'?: (boolean);
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
@@ -41,6 +43,7 @@ export interface Instrument {
   'instrumentKind'?: (_tinkoff_public_invest_api_contract_v1_InstrumentType | keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
+  'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
 }
 
 export interface Instrument__Output {
@@ -71,6 +74,7 @@ export interface Instrument__Output {
   'uid': (string);
   'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid': (string);
+  'assetUid': (string);
   'forIisFlag': (boolean);
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);
@@ -78,4 +82,5 @@ export interface Instrument__Output {
   'instrumentKind': (keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentType);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
+  'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
 }

@@ -46,6 +46,7 @@ export interface ProtoGrpcType {
               Account: MessageTypeDefinition
               AccountStatus: EnumTypeDefinition
               AccountType: EnumTypeDefinition
+              BrandData: MessageTypeDefinition
               GetAccountsRequest: MessageTypeDefinition
               GetAccountsResponse: MessageTypeDefinition
               GetInfoRequest: MessageTypeDefinition

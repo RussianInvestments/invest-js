@@ -5,6 +5,7 @@ import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _goo
 import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
+import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 
 export interface Future {
   'figi'?: (string);
@@ -50,6 +51,7 @@ export interface Future {
   'initialMarginOnBuy'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'initialMarginOnSell'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'minPriceIncrementAmount'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
 }
 
 export interface Future__Output {
@@ -96,4 +98,5 @@ export interface Future__Output {
   'initialMarginOnBuy': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'initialMarginOnSell': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'minPriceIncrementAmount': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
 }

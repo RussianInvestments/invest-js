@@ -4,6 +4,7 @@ import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quo
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 
 export interface Etf {
   'figi'?: (string);
@@ -38,6 +39,7 @@ export interface Etf {
   'uid'?: (string);
   'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
+  'assetUid'?: (string);
   'forIisFlag'?: (boolean);
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
@@ -45,6 +47,7 @@ export interface Etf {
   'liquidityFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
+  'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
 }
 
 export interface Etf__Output {
@@ -80,6 +83,7 @@ export interface Etf__Output {
   'uid': (string);
   'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid': (string);
+  'assetUid': (string);
   'forIisFlag': (boolean);
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);
@@ -87,4 +91,5 @@ export interface Etf__Output {
   'liquidityFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
+  'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
 }

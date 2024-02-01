@@ -1,6 +1,7 @@
 // Original file: investAPI/src/docs/contracts/instruments.proto
 
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
+import type { TradingInterval as _tinkoff_public_invest_api_contract_v1_TradingInterval, TradingInterval__Output as _tinkoff_public_invest_api_contract_v1_TradingInterval__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/TradingInterval';
 
 export interface TradingDay {
   'date'?: (_google_protobuf_Timestamp | null);
@@ -18,6 +19,7 @@ export interface TradingDay {
   'premarketEndTime'?: (_google_protobuf_Timestamp | null);
   'closingAuctionStartTime'?: (_google_protobuf_Timestamp | null);
   'openingAuctionEndTime'?: (_google_protobuf_Timestamp | null);
+  'intervals'?: (_tinkoff_public_invest_api_contract_v1_TradingInterval)[];
 }
 
 export interface TradingDay__Output {
@@ -36,4 +38,5 @@ export interface TradingDay__Output {
   'premarketEndTime': (_google_protobuf_Timestamp__Output | null);
   'closingAuctionStartTime': (_google_protobuf_Timestamp__Output | null);
   'openingAuctionEndTime': (_google_protobuf_Timestamp__Output | null);
+  'intervals': (_tinkoff_public_invest_api_contract_v1_TradingInterval__Output)[];
 }
