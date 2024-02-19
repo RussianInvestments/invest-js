@@ -52,6 +52,7 @@ export interface ProtoGrpcType {
               AccountStatus: EnumTypeDefinition
               AccountSubscriptionStatus: MessageTypeDefinition
               AccountType: EnumTypeDefinition
+              BrandData: MessageTypeDefinition
               BrokerReport: MessageTypeDefinition
               BrokerReportRequest: MessageTypeDefinition
               BrokerReportResponse: MessageTypeDefinition

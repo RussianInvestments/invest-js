@@ -42,6 +42,7 @@ export interface ProtoGrpcType {
         api: {
           contract: {
             v1: {
+              BrandData: MessageTypeDefinition
               CancelStopOrderRequest: MessageTypeDefinition
               CancelStopOrderResponse: MessageTypeDefinition
               ExchangeOrderType: EnumTypeDefinition

@@ -62,6 +62,7 @@ export interface ProtoGrpcType {
               BondResponse: MessageTypeDefinition
               BondsResponse: MessageTypeDefinition
               Brand: MessageTypeDefinition
+              BrandData: MessageTypeDefinition
               CountryResponse: MessageTypeDefinition
               Coupon: MessageTypeDefinition
               CouponType: EnumTypeDefinition
@@ -145,6 +146,7 @@ export interface ProtoGrpcType {
               SharesResponse: MessageTypeDefinition
               StructuredProductType: EnumTypeDefinition
               TradingDay: MessageTypeDefinition
+              TradingInterval: MessageTypeDefinition
               TradingSchedule: MessageTypeDefinition
               TradingSchedulesRequest: MessageTypeDefinition
               TradingSchedulesResponse: MessageTypeDefinition

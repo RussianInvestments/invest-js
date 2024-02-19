@@ -43,6 +43,7 @@ export interface ProtoGrpcType {
         api: {
           contract: {
             v1: {
+              BrandData: MessageTypeDefinition
               Candle: MessageTypeDefinition
               CandleInstrument: MessageTypeDefinition
               CandleInterval: EnumTypeDefinition
@@ -81,6 +82,7 @@ export interface ProtoGrpcType {
               OrderBook: MessageTypeDefinition
               OrderBookInstrument: MessageTypeDefinition
               OrderBookSubscription: MessageTypeDefinition
+              OrderBookType: EnumTypeDefinition
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition

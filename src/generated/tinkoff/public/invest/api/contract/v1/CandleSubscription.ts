@@ -9,6 +9,8 @@ export interface CandleSubscription {
   'subscriptionStatus'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionStatus);
   'instrumentUid'?: (string);
   'waitingClose'?: (boolean);
+  'streamId'?: (string);
+  'subscriptionId'?: (string);
 }
 
 export interface CandleSubscription__Output {
@@ -17,4 +19,6 @@ export interface CandleSubscription__Output {
   'subscriptionStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionStatus);
   'instrumentUid': (string);
   'waitingClose': (boolean);
+  'streamId': (string);
+  'subscriptionId': (string);
 }

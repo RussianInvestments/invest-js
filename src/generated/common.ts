@@ -18,6 +18,7 @@ export interface ProtoGrpcType {
         api: {
           contract: {
             v1: {
+              BrandData: MessageTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               Page: MessageTypeDefinition
