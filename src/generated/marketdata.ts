@@ -59,6 +59,8 @@ export interface ProtoGrpcType {
               GetMySubscriptions: MessageTypeDefinition
               GetOrderBookRequest: MessageTypeDefinition
               GetOrderBookResponse: MessageTypeDefinition
+              GetTechAnalysisRequest: MessageTypeDefinition
+              GetTechAnalysisResponse: MessageTypeDefinition
               GetTradingStatusRequest: MessageTypeDefinition
               GetTradingStatusResponse: MessageTypeDefinition
               GetTradingStatusesRequest: MessageTypeDefinition
