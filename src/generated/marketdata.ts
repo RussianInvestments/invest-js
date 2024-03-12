@@ -47,6 +47,7 @@ export interface ProtoGrpcType {
               Candle: MessageTypeDefinition
               CandleInstrument: MessageTypeDefinition
               CandleInterval: EnumTypeDefinition
+              CandleSource: EnumTypeDefinition
               CandleSubscription: MessageTypeDefinition
               GetCandlesRequest: MessageTypeDefinition
               GetCandlesResponse: MessageTypeDefinition
