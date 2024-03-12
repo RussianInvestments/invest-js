@@ -2,7 +2,11 @@
 
 
 export interface OpenSandboxAccountRequest {
+  'name'?: (string);
+  '_name'?: "name";
 }
 
 export interface OpenSandboxAccountRequest__Output {
+  'name'?: (string);
+  '_name': "name";
 }
