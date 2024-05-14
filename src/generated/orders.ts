@@ -46,6 +46,7 @@ export interface ProtoGrpcType {
               BrandData: MessageTypeDefinition
               CancelOrderRequest: MessageTypeDefinition
               CancelOrderResponse: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               GetMaxLotsRequest: MessageTypeDefinition
               GetMaxLotsResponse: MessageTypeDefinition
               GetOrderPriceRequest: MessageTypeDefinition
@@ -59,6 +60,8 @@ export interface ProtoGrpcType {
               OrderExecutionReportStatus: EnumTypeDefinition
               OrderStage: MessageTypeDefinition
               OrderState: MessageTypeDefinition
+              OrderStateStreamRequest: MessageTypeDefinition
+              OrderStateStreamResponse: MessageTypeDefinition
               OrderTrade: MessageTypeDefinition
               OrderTrades: MessageTypeDefinition
               OrderType: EnumTypeDefinition
@@ -73,6 +76,7 @@ export interface ProtoGrpcType {
               Quotation: MessageTypeDefinition
               ReplaceOrderRequest: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               TimeInForceType: EnumTypeDefinition
               TradesStreamRequest: MessageTypeDefinition

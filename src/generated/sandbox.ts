@@ -61,6 +61,7 @@ export interface ProtoGrpcType {
               CloseSandboxAccountRequest: MessageTypeDefinition
               CloseSandboxAccountResponse: MessageTypeDefinition
               DividendsForeignIssuerReport: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               GenerateBrokerReportRequest: MessageTypeDefinition
               GenerateBrokerReportResponse: MessageTypeDefinition
               GenerateDividendsForeignIssuerReportRequest: MessageTypeDefinition
@@ -107,6 +108,8 @@ export interface ProtoGrpcType {
               OrderExecutionReportStatus: EnumTypeDefinition
               OrderStage: MessageTypeDefinition
               OrderState: MessageTypeDefinition
+              OrderStateStreamRequest: MessageTypeDefinition
+              OrderStateStreamResponse: MessageTypeDefinition
               OrderTrade: MessageTypeDefinition
               OrderTrades: MessageTypeDefinition
               OrderType: EnumTypeDefinition
@@ -140,6 +143,7 @@ export interface ProtoGrpcType {
               Quotation: MessageTypeDefinition
               ReplaceOrderRequest: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SandboxPayInRequest: MessageTypeDefinition
               SandboxPayInResponse: MessageTypeDefinition
               SandboxService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_SandboxServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_SandboxServiceDefinition }

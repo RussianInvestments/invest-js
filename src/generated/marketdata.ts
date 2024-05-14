@@ -49,6 +49,7 @@ export interface ProtoGrpcType {
               CandleInterval: EnumTypeDefinition
               CandleSource: EnumTypeDefinition
               CandleSubscription: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               GetCandlesRequest: MessageTypeDefinition
               GetCandlesResponse: MessageTypeDefinition
               GetClosePricesRequest: MessageTypeDefinition
@@ -92,6 +93,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               SubscribeCandlesRequest: MessageTypeDefinition
               SubscribeCandlesResponse: MessageTypeDefinition
@@ -109,6 +111,7 @@ export interface ProtoGrpcType {
               Trade: MessageTypeDefinition
               TradeDirection: EnumTypeDefinition
               TradeInstrument: MessageTypeDefinition
+              TradeSourceType: EnumTypeDefinition
               TradeSubscription: MessageTypeDefinition
               TradingStatus: MessageTypeDefinition
             }
