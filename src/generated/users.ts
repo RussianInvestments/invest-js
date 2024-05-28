@@ -47,6 +47,7 @@ export interface ProtoGrpcType {
               AccountStatus: EnumTypeDefinition
               AccountType: EnumTypeDefinition
               BrandData: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               GetAccountsRequest: MessageTypeDefinition
               GetAccountsResponse: MessageTypeDefinition
               GetInfoRequest: MessageTypeDefinition
@@ -63,6 +64,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               StreamLimit: MessageTypeDefinition
               UnaryLimit: MessageTypeDefinition

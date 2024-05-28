@@ -6,6 +6,7 @@ import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, M
 import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
 import type { ShareType as _tinkoff_public_invest_api_contract_v1_ShareType } from '../../../../../../tinkoff/public/invest/api/contract/v1/ShareType';
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { InstrumentExchangeType as _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType } from '../../../../../../tinkoff/public/invest/api/contract/v1/InstrumentExchangeType';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 import type { Long } from '@grpc/proto-loader';
 
@@ -44,6 +45,7 @@ export interface Share {
   'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
   'assetUid'?: (string);
+  'instrumentExchange'?: (_tinkoff_public_invest_api_contract_v1_InstrumentExchangeType | keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType);
   'forIisFlag'?: (boolean);
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
@@ -89,6 +91,7 @@ export interface Share__Output {
   'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid': (string);
   'assetUid': (string);
+  'instrumentExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType);
   'forIisFlag': (boolean);
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);

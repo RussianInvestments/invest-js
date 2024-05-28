@@ -7,6 +7,7 @@ import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_Se
 import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
 import type { RiskLevel as _tinkoff_public_invest_api_contract_v1_RiskLevel } from '../../../../../../tinkoff/public/invest/api/contract/v1/RiskLevel';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
+import type { BondType as _tinkoff_public_invest_api_contract_v1_BondType } from '../../../../../../tinkoff/public/invest/api/contract/v1/BondType';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Bond {
@@ -62,6 +63,7 @@ export interface Bond {
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
   'riskLevel'?: (_tinkoff_public_invest_api_contract_v1_RiskLevel | keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);
   'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
+  'bondType'?: (_tinkoff_public_invest_api_contract_v1_BondType | keyof typeof _tinkoff_public_invest_api_contract_v1_BondType);
 }
 
 export interface Bond__Output {
@@ -117,4 +119,5 @@ export interface Bond__Output {
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
   'riskLevel': (keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);
   'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
+  'bondType': (keyof typeof _tinkoff_public_invest_api_contract_v1_BondType);
 }

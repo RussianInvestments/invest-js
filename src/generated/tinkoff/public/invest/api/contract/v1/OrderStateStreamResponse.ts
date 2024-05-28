@@ -1,6 +1,8 @@
 // Original file: investAPI/src/docs/contracts/orders.proto
 
 import type { Ping as _tinkoff_public_invest_api_contract_v1_Ping, Ping__Output as _tinkoff_public_invest_api_contract_v1_Ping__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Ping';
+import type { ResultSubscriptionStatus as _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/ResultSubscriptionStatus';
+import type { ErrorDetail as _tinkoff_public_invest_api_contract_v1_ErrorDetail, ErrorDetail__Output as _tinkoff_public_invest_api_contract_v1_ErrorDetail__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ErrorDetail';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { OrderExecutionReportStatus as _tinkoff_public_invest_api_contract_v1_OrderExecutionReportStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderExecutionReportStatus';
 import type { OrderDirection as _tinkoff_public_invest_api_contract_v1_OrderDirection } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderDirection';
@@ -52,15 +54,19 @@ export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse
   'completionTime'?: (_google_protobuf_Timestamp | null);
   'exchange'?: (string);
   'instrumentUid'?: (string);
+  '_orderRequestId'?: "orderRequestId";
+  '_statusInfo'?: "statusInfo";
+  '_amount'?: "amount";
+  '_marker'?: "marker";
 }
 
 export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_OrderState__Output {
   'orderId': (string);
-  'orderRequestId': (string);
+  'orderRequestId'?: (string);
   'clientCode': (string);
   'createdAt': (_google_protobuf_Timestamp__Output | null);
   'executionReportStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderExecutionReportStatus);
-  'statusInfo': (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_StatusCauseInfo);
+  'statusInfo'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_StatusCauseInfo);
   'ticker': (string);
   'classCode': (string);
   'lotSize': (number);
@@ -70,24 +76,29 @@ export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse
   'accountId': (string);
   'initialOrderPrice': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'orderPrice': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
-  'amount': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'amount'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'executedOrderPrice': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'currency': (string);
   'lotsRequested': (string);
   'lotsExecuted': (string);
   'lotsLeft': (string);
   'lotsCancelled': (string);
-  'marker': (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_MarkerType);
+  'marker'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_MarkerType);
   'trades': (_tinkoff_public_invest_api_contract_v1_OrderTrade__Output)[];
   'completionTime': (_google_protobuf_Timestamp__Output | null);
   'exchange': (string);
   'instrumentUid': (string);
+  '_orderRequestId': "orderRequestId";
+  '_statusInfo': "statusInfo";
+  '_amount': "amount";
+  '_marker': "marker";
 }
 
 // Original file: investAPI/src/docs/contracts/orders.proto
 
 export enum _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_StatusCauseInfo {
-  CAUSE_CANCELLED_BY_CLIENT = 0,
+  CAUSE_UNSPECIFIED = 0,
+  CAUSE_CANCELLED_BY_CLIENT = 15,
   CAUSE_CANCELLED_BY_EXCHANGE = 1,
   CAUSE_CANCELLED_NOT_ENOUGH_POSITION = 2,
   CAUSE_CANCELLED_BY_CLIENT_BLOCK = 3,
@@ -96,14 +107,34 @@ export enum _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_Stat
   CAUSE_CANCELLED_BY_BROKER = 6,
 }
 
+export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse {
+  'trackingId'?: (string);
+  'status'?: (_tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus);
+  'streamId'?: (string);
+  'accounts'?: (string)[];
+  'error'?: (_tinkoff_public_invest_api_contract_v1_ErrorDetail | null);
+  '_error'?: "error";
+}
+
+export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse__Output {
+  'trackingId': (string);
+  'status': (keyof typeof _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus);
+  'streamId': (string);
+  'accounts': (string)[];
+  'error'?: (_tinkoff_public_invest_api_contract_v1_ErrorDetail__Output | null);
+  '_error': "error";
+}
+
 export interface OrderStateStreamResponse {
   'orderState'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_OrderState | null);
   'ping'?: (_tinkoff_public_invest_api_contract_v1_Ping | null);
-  'payload'?: "orderState"|"ping";
+  'subscription'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse | null);
+  'payload'?: "orderState"|"ping"|"subscription";
 }
 
 export interface OrderStateStreamResponse__Output {
   'orderState'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_OrderState__Output | null);
   'ping'?: (_tinkoff_public_invest_api_contract_v1_Ping__Output | null);
-  'payload': "orderState"|"ping";
+  'subscription'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse__Output | null);
+  'payload': "orderState"|"ping"|"subscription";
 }

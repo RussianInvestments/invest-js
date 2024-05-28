@@ -19,6 +19,7 @@ export interface ProtoGrpcType {
           contract: {
             v1: {
               BrandData: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               Page: MessageTypeDefinition
@@ -27,6 +28,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
             }
           }

@@ -45,6 +45,7 @@ export interface ProtoGrpcType {
               BrandData: MessageTypeDefinition
               CancelStopOrderRequest: MessageTypeDefinition
               CancelStopOrderResponse: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               ExchangeOrderType: EnumTypeDefinition
               GetStopOrdersRequest: MessageTypeDefinition
               GetStopOrdersResponse: MessageTypeDefinition
@@ -58,6 +59,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               StopOrder: MessageTypeDefinition
               StopOrderDirection: EnumTypeDefinition

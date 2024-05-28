@@ -49,6 +49,7 @@ export interface ProtoGrpcType {
               BrokerReportRequest: MessageTypeDefinition
               BrokerReportResponse: MessageTypeDefinition
               DividendsForeignIssuerReport: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               GenerateBrokerReportRequest: MessageTypeDefinition
               GenerateBrokerReportResponse: MessageTypeDefinition
               GenerateDividendsForeignIssuerReportRequest: MessageTypeDefinition
@@ -99,6 +100,7 @@ export interface ProtoGrpcType {
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               VirtualPortfolioPosition: MessageTypeDefinition
               WithdrawLimitsRequest: MessageTypeDefinition

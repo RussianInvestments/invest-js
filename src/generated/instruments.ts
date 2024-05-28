@@ -60,6 +60,7 @@ export interface ProtoGrpcType {
               AssetsResponse: MessageTypeDefinition
               Bond: MessageTypeDefinition
               BondResponse: MessageTypeDefinition
+              BondType: EnumTypeDefinition
               BondsResponse: MessageTypeDefinition
               Brand: MessageTypeDefinition
               BrandData: MessageTypeDefinition
@@ -74,6 +75,7 @@ export interface ProtoGrpcType {
               EditFavoritesRequest: MessageTypeDefinition
               EditFavoritesRequestInstrument: MessageTypeDefinition
               EditFavoritesResponse: MessageTypeDefinition
+              ErrorDetail: MessageTypeDefinition
               Etf: MessageTypeDefinition
               EtfResponse: MessageTypeDefinition
               EtfsResponse: MessageTypeDefinition
@@ -113,6 +115,7 @@ export interface ProtoGrpcType {
               IndicativesRequest: MessageTypeDefinition
               IndicativesResponse: MessageTypeDefinition
               Instrument: MessageTypeDefinition
+              InstrumentExchangeType: EnumTypeDefinition
               InstrumentIdType: EnumTypeDefinition
               InstrumentLink: MessageTypeDefinition
               InstrumentRequest: MessageTypeDefinition
@@ -138,6 +141,7 @@ export interface ProtoGrpcType {
               RealExchange: EnumTypeDefinition
               Recommendation: EnumTypeDefinition
               ResponseMetadata: MessageTypeDefinition
+              ResultSubscriptionStatus: EnumTypeDefinition
               RiskLevel: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
               Share: MessageTypeDefinition
