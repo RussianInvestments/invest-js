@@ -1,0 +1,28 @@
+name: TypeScript Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm i
+
+      - name: Set Global TypeScript
+        run: npm i -g typescript
+
+      - name: Build TypeScript
+        run: tsc --project tsconfig.json
