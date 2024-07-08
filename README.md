@@ -1,5 +1,5 @@
 # Trading Open API - JS SDK
-
+![Package build](https://github.com/whonion/invest-js/actions/workflows/build.yml/badge.svg)<br>
 SDK для работы с OpenAPI Тинькофф Инвестиции, который можно использовать для создания торговых роботов.
 
 `npm i @tinkoff/invest-js --save`
