@@ -1,5 +1,10 @@
 name: Node.js Package
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      newversion:
+        description: 'Next Semantic Version Bump (major minor patch)'
+        required: true
 
 jobs:
   publish-npm:
