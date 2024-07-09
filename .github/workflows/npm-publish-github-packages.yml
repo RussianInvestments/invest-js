@@ -11,6 +11,15 @@ jobs:
           node-version: lts/*
           registry-url: https://registry.npmjs.org/
       - run: npm install
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm gen
+      - run: npm build
+      - name: Version and publish to npm
+        id: npm-bump
+        uses: bcomnes/npm-bump@v2
+        with:
+          git_email: t-invest-dev@ru-investments.tech
+          git_username: ${{ github.actor }}
+          newversion: ${{ github.event.inputs.newversion }}
+          push_version_commit: true # if your prePublishOnly step pushes git commits, you can omit this input or set it to false.
+          github_token: ${{ secrets.GITHUB_TOKEN }} # built in actions token.  Passed tp gh-release if in use.
+          npm_token: ${{ secrets.NPM_TOKEN }} # user set secret token generated at npm        
