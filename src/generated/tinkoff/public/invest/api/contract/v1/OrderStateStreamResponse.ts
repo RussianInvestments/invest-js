@@ -1,8 +1,7 @@
 // Original file: investAPI/src/docs/contracts/orders.proto
 
 import type { Ping as _tinkoff_public_invest_api_contract_v1_Ping, Ping__Output as _tinkoff_public_invest_api_contract_v1_Ping__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Ping';
-import type { ResultSubscriptionStatus as _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/ResultSubscriptionStatus';
-import type { ErrorDetail as _tinkoff_public_invest_api_contract_v1_ErrorDetail, ErrorDetail__Output as _tinkoff_public_invest_api_contract_v1_ErrorDetail__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ErrorDetail';
+import type { SubscriptionResponse as _tinkoff_public_invest_api_contract_v1_SubscriptionResponse, SubscriptionResponse__Output as _tinkoff_public_invest_api_contract_v1_SubscriptionResponse__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionResponse';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { OrderExecutionReportStatus as _tinkoff_public_invest_api_contract_v1_OrderExecutionReportStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderExecutionReportStatus';
 import type { OrderDirection as _tinkoff_public_invest_api_contract_v1_OrderDirection } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderDirection';
@@ -107,34 +106,16 @@ export enum _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_Stat
   CAUSE_CANCELLED_BY_BROKER = 6,
 }
 
-export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse {
-  'trackingId'?: (string);
-  'status'?: (_tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus);
-  'streamId'?: (string);
-  'accounts'?: (string)[];
-  'error'?: (_tinkoff_public_invest_api_contract_v1_ErrorDetail | null);
-  '_error'?: "error";
-}
-
-export interface _tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse__Output {
-  'trackingId': (string);
-  'status': (keyof typeof _tinkoff_public_invest_api_contract_v1_ResultSubscriptionStatus);
-  'streamId': (string);
-  'accounts': (string)[];
-  'error'?: (_tinkoff_public_invest_api_contract_v1_ErrorDetail__Output | null);
-  '_error': "error";
-}
-
 export interface OrderStateStreamResponse {
   'orderState'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_OrderState | null);
   'ping'?: (_tinkoff_public_invest_api_contract_v1_Ping | null);
-  'subscription'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse | null);
+  'subscription'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionResponse | null);
   'payload'?: "orderState"|"ping"|"subscription";
 }
 
 export interface OrderStateStreamResponse__Output {
   'orderState'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_OrderState__Output | null);
   'ping'?: (_tinkoff_public_invest_api_contract_v1_Ping__Output | null);
-  'subscription'?: (_tinkoff_public_invest_api_contract_v1_OrderStateStreamResponse_SubscriptionResponse__Output | null);
+  'subscription'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionResponse__Output | null);
   'payload': "orderState"|"ping"|"subscription";
 }

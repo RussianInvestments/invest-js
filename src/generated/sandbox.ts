@@ -137,6 +137,8 @@ export interface ProtoGrpcType {
               PositionsStreamResponse: MessageTypeDefinition
               PositionsSubscriptionResult: MessageTypeDefinition
               PositionsSubscriptionStatus: MessageTypeDefinition
+              PostOrderAsyncRequest: MessageTypeDefinition
+              PostOrderAsyncResponse: MessageTypeDefinition
               PostOrderRequest: MessageTypeDefinition
               PostOrderResponse: MessageTypeDefinition
               PriceType: EnumTypeDefinition
@@ -149,6 +151,7 @@ export interface ProtoGrpcType {
               SandboxService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_SandboxServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_SandboxServiceDefinition }
               SecurityTradingStatus: EnumTypeDefinition
               StreamLimit: MessageTypeDefinition
+              SubscriptionResponse: MessageTypeDefinition
               TimeInForceType: EnumTypeDefinition
               TradesStreamRequest: MessageTypeDefinition
               TradesStreamResponse: MessageTypeDefinition
