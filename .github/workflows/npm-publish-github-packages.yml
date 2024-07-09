@@ -18,8 +18,8 @@ jobs:
           node-version: lts/*
           registry-url: https://registry.npmjs.org/
       - run: npm install
-      - run: npm gen
-      - run: npm build
+      - run: npm run gen
+      - run: npm run build
       - name: Version and publish to npm
         id: npm-bump
         uses: bcomnes/npm-bump@v2
