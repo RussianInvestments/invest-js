@@ -4,8 +4,12 @@ import type { PositionsSubscriptionStatus as _tinkoff_public_invest_api_contract
 
 export interface PositionsSubscriptionResult {
   'accounts'?: (_tinkoff_public_invest_api_contract_v1_PositionsSubscriptionStatus)[];
+  'trackingId'?: (string);
+  'streamId'?: (string);
 }
 
 export interface PositionsSubscriptionResult__Output {
   'accounts': (_tinkoff_public_invest_api_contract_v1_PositionsSubscriptionStatus__Output)[];
+  'trackingId': (string);
+  'streamId': (string);
 }

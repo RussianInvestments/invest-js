@@ -1,3 +1,4 @@
 [submodule "investAPI"]
 	path = investAPI
 	url = https://github.com/RussianInvestments/investAPI
+	branch = main

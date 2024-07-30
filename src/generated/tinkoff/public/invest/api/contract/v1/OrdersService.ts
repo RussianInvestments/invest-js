@@ -12,6 +12,8 @@ import type { GetOrderStateRequest as _tinkoff_public_invest_api_contract_v1_Get
 import type { GetOrdersRequest as _tinkoff_public_invest_api_contract_v1_GetOrdersRequest, GetOrdersRequest__Output as _tinkoff_public_invest_api_contract_v1_GetOrdersRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/GetOrdersRequest';
 import type { GetOrdersResponse as _tinkoff_public_invest_api_contract_v1_GetOrdersResponse, GetOrdersResponse__Output as _tinkoff_public_invest_api_contract_v1_GetOrdersResponse__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/GetOrdersResponse';
 import type { OrderState as _tinkoff_public_invest_api_contract_v1_OrderState, OrderState__Output as _tinkoff_public_invest_api_contract_v1_OrderState__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderState';
+import type { PostOrderAsyncRequest as _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, PostOrderAsyncRequest__Output as _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PostOrderAsyncRequest';
+import type { PostOrderAsyncResponse as _tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse, PostOrderAsyncResponse__Output as _tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PostOrderAsyncResponse';
 import type { PostOrderRequest as _tinkoff_public_invest_api_contract_v1_PostOrderRequest, PostOrderRequest__Output as _tinkoff_public_invest_api_contract_v1_PostOrderRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PostOrderRequest';
 import type { PostOrderResponse as _tinkoff_public_invest_api_contract_v1_PostOrderResponse, PostOrderResponse__Output as _tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PostOrderResponse';
 import type { ReplaceOrderRequest as _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest, ReplaceOrderRequest__Output as _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ReplaceOrderRequest';
@@ -71,6 +73,15 @@ export interface OrdersServiceClient extends grpc.Client {
   postOrder(argument: _tinkoff_public_invest_api_contract_v1_PostOrderRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>): grpc.ClientUnaryCall;
   postOrder(argument: _tinkoff_public_invest_api_contract_v1_PostOrderRequest, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>): grpc.ClientUnaryCall;
   
+  PostOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  PostOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  PostOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  PostOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  postOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  postOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  postOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  postOrderAsync(argument: _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>): grpc.ClientUnaryCall;
+  
   ReplaceOrder(argument: _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>): grpc.ClientUnaryCall;
   ReplaceOrder(argument: _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>): grpc.ClientUnaryCall;
   ReplaceOrder(argument: _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>): grpc.ClientUnaryCall;
@@ -95,6 +106,8 @@ export interface OrdersServiceHandlers extends grpc.UntypedServiceImplementation
   
   PostOrder: grpc.handleUnaryCall<_tinkoff_public_invest_api_contract_v1_PostOrderRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderResponse>;
   
+  PostOrderAsync: grpc.handleUnaryCall<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse>;
+  
   ReplaceOrder: grpc.handleUnaryCall<_tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderResponse>;
   
 }
@@ -106,5 +119,6 @@ export interface OrdersServiceDefinition extends grpc.ServiceDefinition {
   GetOrderState: MethodDefinition<_tinkoff_public_invest_api_contract_v1_GetOrderStateRequest, _tinkoff_public_invest_api_contract_v1_OrderState, _tinkoff_public_invest_api_contract_v1_GetOrderStateRequest__Output, _tinkoff_public_invest_api_contract_v1_OrderState__Output>
   GetOrders: MethodDefinition<_tinkoff_public_invest_api_contract_v1_GetOrdersRequest, _tinkoff_public_invest_api_contract_v1_GetOrdersResponse, _tinkoff_public_invest_api_contract_v1_GetOrdersRequest__Output, _tinkoff_public_invest_api_contract_v1_GetOrdersResponse__Output>
   PostOrder: MethodDefinition<_tinkoff_public_invest_api_contract_v1_PostOrderRequest, _tinkoff_public_invest_api_contract_v1_PostOrderResponse, _tinkoff_public_invest_api_contract_v1_PostOrderRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>
+  PostOrderAsync: MethodDefinition<_tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest, _tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse, _tinkoff_public_invest_api_contract_v1_PostOrderAsyncRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderAsyncResponse__Output>
   ReplaceOrder: MethodDefinition<_tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest, _tinkoff_public_invest_api_contract_v1_PostOrderResponse, _tinkoff_public_invest_api_contract_v1_ReplaceOrderRequest__Output, _tinkoff_public_invest_api_contract_v1_PostOrderResponse__Output>
 }

@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org/
       - run: npm install
-      - run: npm gen
-      - run: npm build
+      - run: npm run gen
+      - run: git add src/generated/ && git commit -m "contracts gen ${{ github.event.inputs.newversion }}" .
+      - run: npm run build
       - name: Version and publish to npm
         id: npm-bump
         uses: bcomnes/npm-bump@v2

@@ -70,6 +70,8 @@ export interface ProtoGrpcType {
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PostOrderAsyncRequest: MessageTypeDefinition
+              PostOrderAsyncResponse: MessageTypeDefinition
               PostOrderRequest: MessageTypeDefinition
               PostOrderResponse: MessageTypeDefinition
               PriceType: EnumTypeDefinition
@@ -78,6 +80,7 @@ export interface ProtoGrpcType {
               ResponseMetadata: MessageTypeDefinition
               ResultSubscriptionStatus: EnumTypeDefinition
               SecurityTradingStatus: EnumTypeDefinition
+              SubscriptionResponse: MessageTypeDefinition
               TimeInForceType: EnumTypeDefinition
               TradesStreamRequest: MessageTypeDefinition
               TradesStreamResponse: MessageTypeDefinition

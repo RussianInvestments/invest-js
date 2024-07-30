@@ -8,6 +8,7 @@ import type { CandleInterval as _tinkoff_public_invest_api_contract_v1_CandleInt
 export enum _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource {
   CANDLE_SOURCE_UNSPECIFIED = 0,
   CANDLE_SOURCE_EXCHANGE = 1,
+  CANDLE_SOURCE_INCLUDE_WEEKEND = 3,
 }
 
 export interface GetCandlesRequest {
@@ -17,9 +18,11 @@ export interface GetCandlesRequest {
   'interval'?: (_tinkoff_public_invest_api_contract_v1_CandleInterval | keyof typeof _tinkoff_public_invest_api_contract_v1_CandleInterval);
   'instrumentId'?: (string);
   'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource);
+  'limit'?: (number);
   '_figi'?: "figi";
   '_instrumentId'?: "instrumentId";
   '_candleSourceType'?: "candleSourceType";
+  '_limit'?: "limit";
 }
 
 export interface GetCandlesRequest__Output {
@@ -29,7 +32,9 @@ export interface GetCandlesRequest__Output {
   'interval': (keyof typeof _tinkoff_public_invest_api_contract_v1_CandleInterval);
   'instrumentId'?: (string);
   'candleSourceType'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource);
+  'limit'?: (number);
   '_figi': "figi";
   '_instrumentId': "instrumentId";
   '_candleSourceType': "candleSourceType";
+  '_limit': "limit";
 }

@@ -76,6 +76,7 @@ export interface ProtoGrpcType {
               LastPrice: MessageTypeDefinition
               LastPriceInstrument: MessageTypeDefinition
               LastPriceSubscription: MessageTypeDefinition
+              LastPriceType: EnumTypeDefinition
               MarketDataRequest: MessageTypeDefinition
               MarketDataResponse: MessageTypeDefinition
               MarketDataServerSideStreamRequest: MessageTypeDefinition
