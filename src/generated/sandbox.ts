@@ -58,6 +58,7 @@ export interface ProtoGrpcType {
               BrokerReportResponse: MessageTypeDefinition
               CancelOrderRequest: MessageTypeDefinition
               CancelOrderResponse: MessageTypeDefinition
+              ChildOperationItem: MessageTypeDefinition
               CloseSandboxAccountRequest: MessageTypeDefinition
               CloseSandboxAccountResponse: MessageTypeDefinition
               DividendsForeignIssuerReport: MessageTypeDefinition
@@ -106,6 +107,7 @@ export interface ProtoGrpcType {
               OperationsStreamService: SubtypeConstructor<typeof grpc.Client, _tinkoff_public_invest_api_contract_v1_OperationsStreamServiceClient> & { service: _tinkoff_public_invest_api_contract_v1_OperationsStreamServiceDefinition }
               OrderDirection: EnumTypeDefinition
               OrderExecutionReportStatus: EnumTypeDefinition
+              OrderIdType: EnumTypeDefinition
               OrderStage: MessageTypeDefinition
               OrderState: MessageTypeDefinition
               OrderStateStreamRequest: MessageTypeDefinition

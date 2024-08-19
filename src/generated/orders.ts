@@ -58,6 +58,7 @@ export interface ProtoGrpcType {
               MoneyValue: MessageTypeDefinition
               OrderDirection: EnumTypeDefinition
               OrderExecutionReportStatus: EnumTypeDefinition
+              OrderIdType: EnumTypeDefinition
               OrderStage: MessageTypeDefinition
               OrderState: MessageTypeDefinition
               OrderStateStreamRequest: MessageTypeDefinition

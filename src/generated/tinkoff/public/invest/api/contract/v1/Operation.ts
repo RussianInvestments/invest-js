@@ -5,6 +5,7 @@ import type { OperationState as _tinkoff_public_invest_api_contract_v1_Operation
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { OperationType as _tinkoff_public_invest_api_contract_v1_OperationType } from '../../../../../../tinkoff/public/invest/api/contract/v1/OperationType';
 import type { OperationTrade as _tinkoff_public_invest_api_contract_v1_OperationTrade, OperationTrade__Output as _tinkoff_public_invest_api_contract_v1_OperationTrade__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OperationTrade';
+import type { ChildOperationItem as _tinkoff_public_invest_api_contract_v1_ChildOperationItem, ChildOperationItem__Output as _tinkoff_public_invest_api_contract_v1_ChildOperationItem__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ChildOperationItem';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Operation {
@@ -25,6 +26,7 @@ export interface Operation {
   'assetUid'?: (string);
   'positionUid'?: (string);
   'instrumentUid'?: (string);
+  'childOperations'?: (_tinkoff_public_invest_api_contract_v1_ChildOperationItem)[];
 }
 
 export interface Operation__Output {
@@ -45,4 +47,5 @@ export interface Operation__Output {
   'assetUid': (string);
   'positionUid': (string);
   'instrumentUid': (string);
+  'childOperations': (_tinkoff_public_invest_api_contract_v1_ChildOperationItem__Output)[];
 }
