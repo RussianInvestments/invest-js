@@ -7,6 +7,7 @@ import type { InstrumentType as _tinkoff_public_invest_api_contract_v1_Instrumen
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { OperationItemTrades as _tinkoff_public_invest_api_contract_v1_OperationItemTrades, OperationItemTrades__Output as _tinkoff_public_invest_api_contract_v1_OperationItemTrades__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OperationItemTrades';
+import type { ChildOperationItem as _tinkoff_public_invest_api_contract_v1_ChildOperationItem, ChildOperationItem__Output as _tinkoff_public_invest_api_contract_v1_ChildOperationItem__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ChildOperationItem';
 import type { Long } from '@grpc/proto-loader';
 
 export interface OperationItem {
@@ -37,6 +38,7 @@ export interface OperationItem {
   'cancelReason'?: (string);
   'tradesInfo'?: (_tinkoff_public_invest_api_contract_v1_OperationItemTrades | null);
   'assetUid'?: (string);
+  'childOperations'?: (_tinkoff_public_invest_api_contract_v1_ChildOperationItem)[];
 }
 
 export interface OperationItem__Output {
@@ -67,4 +69,5 @@ export interface OperationItem__Output {
   'cancelReason': (string);
   'tradesInfo': (_tinkoff_public_invest_api_contract_v1_OperationItemTrades__Output | null);
   'assetUid': (string);
+  'childOperations': (_tinkoff_public_invest_api_contract_v1_ChildOperationItem__Output)[];
 }

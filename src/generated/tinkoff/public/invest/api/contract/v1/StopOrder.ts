@@ -49,6 +49,8 @@ export interface StopOrder {
   'trailingData'?: (_tinkoff_public_invest_api_contract_v1_StopOrder_TrailingData | null);
   'status'?: (_tinkoff_public_invest_api_contract_v1_StopOrderStatusOption | keyof typeof _tinkoff_public_invest_api_contract_v1_StopOrderStatusOption);
   'exchangeOrderType'?: (_tinkoff_public_invest_api_contract_v1_ExchangeOrderType | keyof typeof _tinkoff_public_invest_api_contract_v1_ExchangeOrderType);
+  'exchangeOrderId'?: (string);
+  '_exchangeOrderId'?: "exchangeOrderId";
 }
 
 export interface StopOrder__Output {
@@ -68,4 +70,6 @@ export interface StopOrder__Output {
   'trailingData': (_tinkoff_public_invest_api_contract_v1_StopOrder_TrailingData__Output | null);
   'status': (keyof typeof _tinkoff_public_invest_api_contract_v1_StopOrderStatusOption);
   'exchangeOrderType': (keyof typeof _tinkoff_public_invest_api_contract_v1_ExchangeOrderType);
+  'exchangeOrderId'?: (string);
+  '_exchangeOrderId': "exchangeOrderId";
 }

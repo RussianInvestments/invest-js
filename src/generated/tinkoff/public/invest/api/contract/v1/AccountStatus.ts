@@ -5,4 +5,5 @@ export enum AccountStatus {
   ACCOUNT_STATUS_NEW = 1,
   ACCOUNT_STATUS_OPEN = 2,
   ACCOUNT_STATUS_CLOSED = 3,
+  ACCOUNT_STATUS_ALL = 4,
 }

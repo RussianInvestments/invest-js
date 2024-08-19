@@ -48,6 +48,7 @@ export interface ProtoGrpcType {
               BrokerReport: MessageTypeDefinition
               BrokerReportRequest: MessageTypeDefinition
               BrokerReportResponse: MessageTypeDefinition
+              ChildOperationItem: MessageTypeDefinition
               DividendsForeignIssuerReport: MessageTypeDefinition
               ErrorDetail: MessageTypeDefinition
               GenerateBrokerReportRequest: MessageTypeDefinition
