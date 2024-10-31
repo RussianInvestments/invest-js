@@ -2,9 +2,9 @@
 
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
-import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
-import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
-import type { InstrumentExchangeType as _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType } from '../../../../../../tinkoff/public/invest/api/contract/v1/InstrumentExchangeType';
+import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus, SecurityTradingStatus__Output as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
+import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange, RealExchange__Output as _tinkoff_public_invest_api_contract_v1_RealExchange__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { InstrumentExchangeType as _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType, InstrumentExchangeType__Output as _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/InstrumentExchangeType';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 
 export interface Etf {
@@ -31,17 +31,17 @@ export interface Etf {
   'countryOfRiskName'?: (string);
   'sector'?: (string);
   'rebalancingFreq'?: (string);
-  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
   'otcFlag'?: (boolean);
   'buyAvailableFlag'?: (boolean);
   'sellAvailableFlag'?: (boolean);
   'minPriceIncrement'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'apiTradeAvailableFlag'?: (boolean);
   'uid'?: (string);
-  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
   'assetUid'?: (string);
-  'instrumentExchange'?: (_tinkoff_public_invest_api_contract_v1_InstrumentExchangeType | keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType);
+  'instrumentExchange'?: (_tinkoff_public_invest_api_contract_v1_InstrumentExchangeType);
   'forIisFlag'?: (boolean);
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
@@ -76,17 +76,17 @@ export interface Etf__Output {
   'countryOfRiskName': (string);
   'sector': (string);
   'rebalancingFreq': (string);
-  'tradingStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus': (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output);
   'otcFlag': (boolean);
   'buyAvailableFlag': (boolean);
   'sellAvailableFlag': (boolean);
   'minPriceIncrement': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'apiTradeAvailableFlag': (boolean);
   'uid': (string);
-  'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange': (_tinkoff_public_invest_api_contract_v1_RealExchange__Output);
   'positionUid': (string);
   'assetUid': (string);
-  'instrumentExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_InstrumentExchangeType);
+  'instrumentExchange': (_tinkoff_public_invest_api_contract_v1_InstrumentExchangeType__Output);
   'forIisFlag': (boolean);
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);

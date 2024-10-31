@@ -1,13 +1,13 @@
 // Original file: investAPI/src/docs/contracts/instruments.proto
 
-import type { Recommendation as _tinkoff_public_invest_api_contract_v1_Recommendation } from '../../../../../../tinkoff/public/invest/api/contract/v1/Recommendation';
+import type { Recommendation as _tinkoff_public_invest_api_contract_v1_Recommendation, Recommendation__Output as _tinkoff_public_invest_api_contract_v1_Recommendation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Recommendation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 
 export interface _tinkoff_public_invest_api_contract_v1_GetForecastResponse_ConsensusItem {
   'uid'?: (string);
   'ticker'?: (string);
-  'recommendation'?: (_tinkoff_public_invest_api_contract_v1_Recommendation | keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'recommendation'?: (_tinkoff_public_invest_api_contract_v1_Recommendation);
   'currency'?: (string);
   'currentPrice'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'consensus'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
@@ -20,7 +20,7 @@ export interface _tinkoff_public_invest_api_contract_v1_GetForecastResponse_Cons
 export interface _tinkoff_public_invest_api_contract_v1_GetForecastResponse_ConsensusItem__Output {
   'uid': (string);
   'ticker': (string);
-  'recommendation': (keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'recommendation': (_tinkoff_public_invest_api_contract_v1_Recommendation__Output);
   'currency': (string);
   'currentPrice': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'consensus': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
@@ -34,7 +34,7 @@ export interface _tinkoff_public_invest_api_contract_v1_GetForecastResponse_Targ
   'uid'?: (string);
   'ticker'?: (string);
   'company'?: (string);
-  'recommendation'?: (_tinkoff_public_invest_api_contract_v1_Recommendation | keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'recommendation'?: (_tinkoff_public_invest_api_contract_v1_Recommendation);
   'recommendationDate'?: (_google_protobuf_Timestamp | null);
   'currency'?: (string);
   'currentPrice'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
@@ -48,7 +48,7 @@ export interface _tinkoff_public_invest_api_contract_v1_GetForecastResponse_Targ
   'uid': (string);
   'ticker': (string);
   'company': (string);
-  'recommendation': (keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'recommendation': (_tinkoff_public_invest_api_contract_v1_Recommendation__Output);
   'recommendationDate': (_google_protobuf_Timestamp__Output | null);
   'currency': (string);
   'currentPrice': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);

@@ -2,8 +2,8 @@
 
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
-import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
-import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus, SecurityTradingStatus__Output as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
+import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange, RealExchange__Output as _tinkoff_public_invest_api_contract_v1_RealExchange__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 
@@ -32,14 +32,14 @@ export interface Future {
   'countryOfRiskName'?: (string);
   'sector'?: (string);
   'expirationDate'?: (_google_protobuf_Timestamp | null);
-  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
   'otcFlag'?: (boolean);
   'buyAvailableFlag'?: (boolean);
   'sellAvailableFlag'?: (boolean);
   'minPriceIncrement'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'apiTradeAvailableFlag'?: (boolean);
   'uid'?: (string);
-  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
   'basicAssetPositionUid'?: (string);
   'forIisFlag'?: (boolean);
@@ -79,14 +79,14 @@ export interface Future__Output {
   'countryOfRiskName': (string);
   'sector': (string);
   'expirationDate': (_google_protobuf_Timestamp__Output | null);
-  'tradingStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus': (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output);
   'otcFlag': (boolean);
   'buyAvailableFlag': (boolean);
   'sellAvailableFlag': (boolean);
   'minPriceIncrement': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'apiTradeAvailableFlag': (boolean);
   'uid': (string);
-  'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange': (_tinkoff_public_invest_api_contract_v1_RealExchange__Output);
   'positionUid': (string);
   'basicAssetPositionUid': (string);
   'forIisFlag': (boolean);

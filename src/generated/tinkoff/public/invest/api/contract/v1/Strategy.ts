@@ -1,6 +1,6 @@
 // Original file: investAPI/src/docs/contracts/signals.proto
 
-import type { StrategyType as _tinkoff_public_invest_api_contract_v1_StrategyType } from '../../../../../../tinkoff/public/invest/api/contract/v1/StrategyType';
+import type { StrategyType as _tinkoff_public_invest_api_contract_v1_StrategyType, StrategyType__Output as _tinkoff_public_invest_api_contract_v1_StrategyType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/StrategyType';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Long } from '@grpc/proto-loader';
 
@@ -9,7 +9,7 @@ export interface Strategy {
   'strategyName'?: (string);
   'strategyDescription'?: (string);
   'strategyUrl'?: (string);
-  'strategyType'?: (_tinkoff_public_invest_api_contract_v1_StrategyType | keyof typeof _tinkoff_public_invest_api_contract_v1_StrategyType);
+  'strategyType'?: (_tinkoff_public_invest_api_contract_v1_StrategyType);
   'activeSignals'?: (number);
   'totalSignals'?: (number);
   'timeInPosition'?: (number | string | Long);
@@ -26,7 +26,7 @@ export interface Strategy__Output {
   'strategyName': (string);
   'strategyDescription'?: (string);
   'strategyUrl'?: (string);
-  'strategyType': (keyof typeof _tinkoff_public_invest_api_contract_v1_StrategyType);
+  'strategyType': (_tinkoff_public_invest_api_contract_v1_StrategyType__Output);
   'activeSignals': (number);
   'totalSignals': (number);
   'timeInPosition': (string);

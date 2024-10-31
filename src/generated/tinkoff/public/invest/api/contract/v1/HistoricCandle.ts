@@ -2,7 +2,7 @@
 
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
-import type { CandleSource as _tinkoff_public_invest_api_contract_v1_CandleSource } from '../../../../../../tinkoff/public/invest/api/contract/v1/CandleSource';
+import type { CandleSource as _tinkoff_public_invest_api_contract_v1_CandleSource, CandleSource__Output as _tinkoff_public_invest_api_contract_v1_CandleSource__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/CandleSource';
 import type { Long } from '@grpc/proto-loader';
 
 export interface HistoricCandle {
@@ -13,7 +13,7 @@ export interface HistoricCandle {
   'volume'?: (number | string | Long);
   'time'?: (_google_protobuf_Timestamp | null);
   'isComplete'?: (boolean);
-  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
+  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_CandleSource);
 }
 
 export interface HistoricCandle__Output {
@@ -24,5 +24,5 @@ export interface HistoricCandle__Output {
   'volume': (string);
   'time': (_google_protobuf_Timestamp__Output | null);
   'isComplete': (boolean);
-  'candleSourceType': (keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
+  'candleSourceType': (_tinkoff_public_invest_api_contract_v1_CandleSource__Output);
 }

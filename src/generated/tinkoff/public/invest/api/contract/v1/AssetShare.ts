@@ -1,11 +1,11 @@
 // Original file: investAPI/src/docs/contracts/instruments.proto
 
-import type { ShareType as _tinkoff_public_invest_api_contract_v1_ShareType } from '../../../../../../tinkoff/public/invest/api/contract/v1/ShareType';
+import type { ShareType as _tinkoff_public_invest_api_contract_v1_ShareType, ShareType__Output as _tinkoff_public_invest_api_contract_v1_ShareType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/ShareType';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 
 export interface AssetShare {
-  'type'?: (_tinkoff_public_invest_api_contract_v1_ShareType | keyof typeof _tinkoff_public_invest_api_contract_v1_ShareType);
+  'type'?: (_tinkoff_public_invest_api_contract_v1_ShareType);
   'issueSize'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'nominal'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'nominalCurrency'?: (string);
@@ -23,7 +23,7 @@ export interface AssetShare {
 }
 
 export interface AssetShare__Output {
-  'type': (keyof typeof _tinkoff_public_invest_api_contract_v1_ShareType);
+  'type': (_tinkoff_public_invest_api_contract_v1_ShareType__Output);
   'issueSize': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'nominal': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'nominalCurrency': (string);

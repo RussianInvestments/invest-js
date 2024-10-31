@@ -1,7 +1,7 @@
 // Original file: investAPI/src/docs/contracts/signals.proto
 
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
-import type { SignalDirection as _tinkoff_public_invest_api_contract_v1_SignalDirection } from '../../../../../../tinkoff/public/invest/api/contract/v1/SignalDirection';
+import type { SignalDirection as _tinkoff_public_invest_api_contract_v1_SignalDirection, SignalDirection__Output as _tinkoff_public_invest_api_contract_v1_SignalDirection__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SignalDirection';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 
 export interface Signal {
@@ -10,7 +10,7 @@ export interface Signal {
   'strategyName'?: (string);
   'instrumentUid'?: (string);
   'createDt'?: (_google_protobuf_Timestamp | null);
-  'direction'?: (_tinkoff_public_invest_api_contract_v1_SignalDirection | keyof typeof _tinkoff_public_invest_api_contract_v1_SignalDirection);
+  'direction'?: (_tinkoff_public_invest_api_contract_v1_SignalDirection);
   'initialPrice'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'info'?: (string);
   'name'?: (string);
@@ -33,7 +33,7 @@ export interface Signal__Output {
   'strategyName': (string);
   'instrumentUid': (string);
   'createDt': (_google_protobuf_Timestamp__Output | null);
-  'direction': (keyof typeof _tinkoff_public_invest_api_contract_v1_SignalDirection);
+  'direction': (_tinkoff_public_invest_api_contract_v1_SignalDirection__Output);
   'initialPrice': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'info'?: (string);
   'name': (string);
