@@ -33,7 +33,7 @@
   "devDependencies": {
     "ts-node": "^10.9.2",
     "auto-changelog": "^1.16.2",
-    "gh-release": "^3.5.0"
+    "gh-release": "^7.0.2"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.0",
