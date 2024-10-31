@@ -6,11 +6,11 @@ import type { TradeSourceType as _tinkoff_public_invest_api_contract_v1_TradeSou
 export interface SubscribeTradesResponse {
   'trackingId'?: (string);
   'tradeSubscriptions'?: (_tinkoff_public_invest_api_contract_v1_TradeSubscription)[];
-  'tradeType'?: (_tinkoff_public_invest_api_contract_v1_TradeSourceType | keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
+  'tradeSource'?: (_tinkoff_public_invest_api_contract_v1_TradeSourceType | keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
 }
 
 export interface SubscribeTradesResponse__Output {
   'trackingId': (string);
   'tradeSubscriptions': (_tinkoff_public_invest_api_contract_v1_TradeSubscription__Output)[];
-  'tradeType': (keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
+  'tradeSource': (keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
 }

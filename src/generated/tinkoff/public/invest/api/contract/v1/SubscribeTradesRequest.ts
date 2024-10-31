@@ -7,11 +7,11 @@ import type { TradeSourceType as _tinkoff_public_invest_api_contract_v1_TradeSou
 export interface SubscribeTradesRequest {
   'subscriptionAction'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionAction | keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionAction);
   'instruments'?: (_tinkoff_public_invest_api_contract_v1_TradeInstrument)[];
-  'tradeType'?: (_tinkoff_public_invest_api_contract_v1_TradeSourceType | keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
+  'tradeSource'?: (_tinkoff_public_invest_api_contract_v1_TradeSourceType | keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
 }
 
 export interface SubscribeTradesRequest__Output {
   'subscriptionAction': (keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionAction);
   'instruments': (_tinkoff_public_invest_api_contract_v1_TradeInstrument__Output)[];
-  'tradeType': (keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
+  'tradeSource': (keyof typeof _tinkoff_public_invest_api_contract_v1_TradeSourceType);
 }

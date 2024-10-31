@@ -3,6 +3,7 @@
 import type { SubscriptionInterval as _tinkoff_public_invest_api_contract_v1_SubscriptionInterval } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionInterval';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
+import type { CandleSource as _tinkoff_public_invest_api_contract_v1_CandleSource } from '../../../../../../tinkoff/public/invest/api/contract/v1/CandleSource';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Candle {
@@ -16,6 +17,7 @@ export interface Candle {
   'time'?: (_google_protobuf_Timestamp | null);
   'lastTradeTs'?: (_google_protobuf_Timestamp | null);
   'instrumentUid'?: (string);
+  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
 }
 
 export interface Candle__Output {
@@ -29,4 +31,5 @@ export interface Candle__Output {
   'time': (_google_protobuf_Timestamp__Output | null);
   'lastTradeTs': (_google_protobuf_Timestamp__Output | null);
   'instrumentUid': (string);
+  'candleSourceType': (keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
 }

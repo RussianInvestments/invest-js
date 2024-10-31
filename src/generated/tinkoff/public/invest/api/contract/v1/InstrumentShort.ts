@@ -20,6 +20,7 @@ export interface InstrumentShort {
   'forQualInvestorFlag'?: (boolean);
   'weekendFlag'?: (boolean);
   'blockedTcaFlag'?: (boolean);
+  'lot'?: (number);
 }
 
 export interface InstrumentShort__Output {
@@ -39,4 +40,5 @@ export interface InstrumentShort__Output {
   'forQualInvestorFlag': (boolean);
   'weekendFlag': (boolean);
   'blockedTcaFlag': (boolean);
+  'lot': (number);
 }

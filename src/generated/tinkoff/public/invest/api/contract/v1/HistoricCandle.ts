@@ -13,7 +13,7 @@ export interface HistoricCandle {
   'volume'?: (number | string | Long);
   'time'?: (_google_protobuf_Timestamp | null);
   'isComplete'?: (boolean);
-  'candleSource'?: (_tinkoff_public_invest_api_contract_v1_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
+  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
 }
 
 export interface HistoricCandle__Output {
@@ -24,5 +24,5 @@ export interface HistoricCandle__Output {
   'volume': (string);
   'time': (_google_protobuf_Timestamp__Output | null);
   'isComplete': (boolean);
-  'candleSource': (keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
+  'candleSourceType': (keyof typeof _tinkoff_public_invest_api_contract_v1_CandleSource);
 }

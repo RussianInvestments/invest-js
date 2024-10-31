@@ -54,6 +54,8 @@ export interface ProtoGrpcType {
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PingDelaySettings: MessageTypeDefinition
+              PingRequest: MessageTypeDefinition
               PostStopOrderRequest: MessageTypeDefinition
               PostStopOrderResponse: MessageTypeDefinition
               PriceType: EnumTypeDefinition

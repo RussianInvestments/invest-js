@@ -2,6 +2,7 @@
 
 import type { SubscriptionInterval as _tinkoff_public_invest_api_contract_v1_SubscriptionInterval } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionInterval';
 import type { SubscriptionStatus as _tinkoff_public_invest_api_contract_v1_SubscriptionStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionStatus';
+import type { _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource } from '../../../../../../tinkoff/public/invest/api/contract/v1/GetCandlesRequest';
 
 export interface CandleSubscription {
   'figi'?: (string);
@@ -11,6 +12,8 @@ export interface CandleSubscription {
   'waitingClose'?: (boolean);
   'streamId'?: (string);
   'subscriptionId'?: (string);
+  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource | keyof typeof _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource);
+  '_candleSourceType'?: "candleSourceType";
 }
 
 export interface CandleSubscription__Output {
@@ -21,4 +24,6 @@ export interface CandleSubscription__Output {
   'waitingClose': (boolean);
   'streamId': (string);
   'subscriptionId': (string);
+  'candleSourceType'?: (keyof typeof _tinkoff_public_invest_api_contract_v1_GetCandlesRequest_CandleSource);
+  '_candleSourceType': "candleSourceType";
 }

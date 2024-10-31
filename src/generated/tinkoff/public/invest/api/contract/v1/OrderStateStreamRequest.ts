@@ -3,12 +3,12 @@
 
 export interface OrderStateStreamRequest {
   'accounts'?: (string)[];
-  'pingDelayMillis'?: (number);
-  '_pingDelayMillis'?: "pingDelayMillis";
+  'pingDelayMs'?: (number);
+  '_pingDelayMs'?: "pingDelayMs";
 }
 
 export interface OrderStateStreamRequest__Output {
   'accounts': (string)[];
-  'pingDelayMillis'?: (number);
-  '_pingDelayMillis': "pingDelayMillis";
+  'pingDelayMs'?: (number);
+  '_pingDelayMs': "pingDelayMs";
 }
