@@ -120,6 +120,8 @@ export interface ProtoGrpcType {
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PingDelaySettings: MessageTypeDefinition
+              PingRequest: MessageTypeDefinition
               PortfolioPosition: MessageTypeDefinition
               PortfolioRequest: MessageTypeDefinition
               PortfolioResponse: MessageTypeDefinition

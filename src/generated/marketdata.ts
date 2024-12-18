@@ -91,6 +91,8 @@ export interface ProtoGrpcType {
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PingDelaySettings: MessageTypeDefinition
+              PingRequest: MessageTypeDefinition
               PriceType: EnumTypeDefinition
               Quotation: MessageTypeDefinition
               ResponseMetadata: MessageTypeDefinition

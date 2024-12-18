@@ -3,11 +3,11 @@
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
-import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
-import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
-import type { RiskLevel as _tinkoff_public_invest_api_contract_v1_RiskLevel } from '../../../../../../tinkoff/public/invest/api/contract/v1/RiskLevel';
+import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus, SecurityTradingStatus__Output as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
+import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange, RealExchange__Output as _tinkoff_public_invest_api_contract_v1_RealExchange__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { RiskLevel as _tinkoff_public_invest_api_contract_v1_RiskLevel, RiskLevel__Output as _tinkoff_public_invest_api_contract_v1_RiskLevel__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/RiskLevel';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
-import type { BondType as _tinkoff_public_invest_api_contract_v1_BondType } from '../../../../../../tinkoff/public/invest/api/contract/v1/BondType';
+import type { BondType as _tinkoff_public_invest_api_contract_v1_BondType, BondType__Output as _tinkoff_public_invest_api_contract_v1_BondType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BondType';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Bond {
@@ -40,7 +40,7 @@ export interface Bond {
   'issueKind'?: (string);
   'issueSize'?: (number | string | Long);
   'issueSizePlan'?: (number | string | Long);
-  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
   'otcFlag'?: (boolean);
   'buyAvailableFlag'?: (boolean);
   'sellAvailableFlag'?: (boolean);
@@ -50,7 +50,7 @@ export interface Bond {
   'minPriceIncrement'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'apiTradeAvailableFlag'?: (boolean);
   'uid'?: (string);
-  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange);
   'positionUid'?: (string);
   'assetUid'?: (string);
   'forIisFlag'?: (boolean);
@@ -61,9 +61,9 @@ export interface Bond {
   'liquidityFlag'?: (boolean);
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
-  'riskLevel'?: (_tinkoff_public_invest_api_contract_v1_RiskLevel | keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);
+  'riskLevel'?: (_tinkoff_public_invest_api_contract_v1_RiskLevel);
   'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
-  'bondType'?: (_tinkoff_public_invest_api_contract_v1_BondType | keyof typeof _tinkoff_public_invest_api_contract_v1_BondType);
+  'bondType'?: (_tinkoff_public_invest_api_contract_v1_BondType);
 }
 
 export interface Bond__Output {
@@ -96,7 +96,7 @@ export interface Bond__Output {
   'issueKind': (string);
   'issueSize': (string);
   'issueSizePlan': (string);
-  'tradingStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'tradingStatus': (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output);
   'otcFlag': (boolean);
   'buyAvailableFlag': (boolean);
   'sellAvailableFlag': (boolean);
@@ -106,7 +106,7 @@ export interface Bond__Output {
   'minPriceIncrement': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'apiTradeAvailableFlag': (boolean);
   'uid': (string);
-  'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
+  'realExchange': (_tinkoff_public_invest_api_contract_v1_RealExchange__Output);
   'positionUid': (string);
   'assetUid': (string);
   'forIisFlag': (boolean);
@@ -117,7 +117,7 @@ export interface Bond__Output {
   'liquidityFlag': (boolean);
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
-  'riskLevel': (keyof typeof _tinkoff_public_invest_api_contract_v1_RiskLevel);
+  'riskLevel': (_tinkoff_public_invest_api_contract_v1_RiskLevel__Output);
   'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
-  'bondType': (keyof typeof _tinkoff_public_invest_api_contract_v1_BondType);
+  'bondType': (_tinkoff_public_invest_api_contract_v1_BondType__Output);
 }

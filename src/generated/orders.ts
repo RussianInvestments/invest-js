@@ -71,6 +71,8 @@ export interface ProtoGrpcType {
               Page: MessageTypeDefinition
               PageResponse: MessageTypeDefinition
               Ping: MessageTypeDefinition
+              PingDelaySettings: MessageTypeDefinition
+              PingRequest: MessageTypeDefinition
               PostOrderAsyncRequest: MessageTypeDefinition
               PostOrderAsyncResponse: MessageTypeDefinition
               PostOrderRequest: MessageTypeDefinition

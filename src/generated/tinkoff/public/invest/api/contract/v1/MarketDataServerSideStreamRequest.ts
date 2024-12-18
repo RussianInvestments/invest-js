@@ -5,6 +5,7 @@ import type { SubscribeOrderBookRequest as _tinkoff_public_invest_api_contract_v
 import type { SubscribeTradesRequest as _tinkoff_public_invest_api_contract_v1_SubscribeTradesRequest, SubscribeTradesRequest__Output as _tinkoff_public_invest_api_contract_v1_SubscribeTradesRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscribeTradesRequest';
 import type { SubscribeInfoRequest as _tinkoff_public_invest_api_contract_v1_SubscribeInfoRequest, SubscribeInfoRequest__Output as _tinkoff_public_invest_api_contract_v1_SubscribeInfoRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscribeInfoRequest';
 import type { SubscribeLastPriceRequest as _tinkoff_public_invest_api_contract_v1_SubscribeLastPriceRequest, SubscribeLastPriceRequest__Output as _tinkoff_public_invest_api_contract_v1_SubscribeLastPriceRequest__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscribeLastPriceRequest';
+import type { PingDelaySettings as _tinkoff_public_invest_api_contract_v1_PingDelaySettings, PingDelaySettings__Output as _tinkoff_public_invest_api_contract_v1_PingDelaySettings__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PingDelaySettings';
 
 export interface MarketDataServerSideStreamRequest {
   'subscribeCandlesRequest'?: (_tinkoff_public_invest_api_contract_v1_SubscribeCandlesRequest | null);
@@ -12,6 +13,7 @@ export interface MarketDataServerSideStreamRequest {
   'subscribeTradesRequest'?: (_tinkoff_public_invest_api_contract_v1_SubscribeTradesRequest | null);
   'subscribeInfoRequest'?: (_tinkoff_public_invest_api_contract_v1_SubscribeInfoRequest | null);
   'subscribeLastPriceRequest'?: (_tinkoff_public_invest_api_contract_v1_SubscribeLastPriceRequest | null);
+  'pingSettings'?: (_tinkoff_public_invest_api_contract_v1_PingDelaySettings | null);
 }
 
 export interface MarketDataServerSideStreamRequest__Output {
@@ -20,4 +22,5 @@ export interface MarketDataServerSideStreamRequest__Output {
   'subscribeTradesRequest': (_tinkoff_public_invest_api_contract_v1_SubscribeTradesRequest__Output | null);
   'subscribeInfoRequest': (_tinkoff_public_invest_api_contract_v1_SubscribeInfoRequest__Output | null);
   'subscribeLastPriceRequest': (_tinkoff_public_invest_api_contract_v1_SubscribeLastPriceRequest__Output | null);
+  'pingSettings': (_tinkoff_public_invest_api_contract_v1_PingDelaySettings__Output | null);
 }

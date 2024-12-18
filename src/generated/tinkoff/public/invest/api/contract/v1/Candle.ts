@@ -1,13 +1,14 @@
 // Original file: investAPI/src/docs/contracts/marketdata.proto
 
-import type { SubscriptionInterval as _tinkoff_public_invest_api_contract_v1_SubscriptionInterval } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionInterval';
+import type { SubscriptionInterval as _tinkoff_public_invest_api_contract_v1_SubscriptionInterval, SubscriptionInterval__Output as _tinkoff_public_invest_api_contract_v1_SubscriptionInterval__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SubscriptionInterval';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
+import type { CandleSource as _tinkoff_public_invest_api_contract_v1_CandleSource, CandleSource__Output as _tinkoff_public_invest_api_contract_v1_CandleSource__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/CandleSource';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Candle {
   'figi'?: (string);
-  'interval'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionInterval | keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionInterval);
+  'interval'?: (_tinkoff_public_invest_api_contract_v1_SubscriptionInterval);
   'open'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'high'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'low'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
@@ -16,11 +17,12 @@ export interface Candle {
   'time'?: (_google_protobuf_Timestamp | null);
   'lastTradeTs'?: (_google_protobuf_Timestamp | null);
   'instrumentUid'?: (string);
+  'candleSourceType'?: (_tinkoff_public_invest_api_contract_v1_CandleSource);
 }
 
 export interface Candle__Output {
   'figi': (string);
-  'interval': (keyof typeof _tinkoff_public_invest_api_contract_v1_SubscriptionInterval);
+  'interval': (_tinkoff_public_invest_api_contract_v1_SubscriptionInterval__Output);
   'open': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'high': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'low': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
@@ -29,4 +31,5 @@ export interface Candle__Output {
   'time': (_google_protobuf_Timestamp__Output | null);
   'lastTradeTs': (_google_protobuf_Timestamp__Output | null);
   'instrumentUid': (string);
+  'candleSourceType': (_tinkoff_public_invest_api_contract_v1_CandleSource__Output);
 }

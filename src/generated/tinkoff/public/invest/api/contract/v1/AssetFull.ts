@@ -1,6 +1,6 @@
 // Original file: investAPI/src/docs/contracts/instruments.proto
 
-import type { AssetType as _tinkoff_public_invest_api_contract_v1_AssetType } from '../../../../../../tinkoff/public/invest/api/contract/v1/AssetType';
+import type { AssetType as _tinkoff_public_invest_api_contract_v1_AssetType, AssetType__Output as _tinkoff_public_invest_api_contract_v1_AssetType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/AssetType';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { AssetCurrency as _tinkoff_public_invest_api_contract_v1_AssetCurrency, AssetCurrency__Output as _tinkoff_public_invest_api_contract_v1_AssetCurrency__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/AssetCurrency';
 import type { AssetSecurity as _tinkoff_public_invest_api_contract_v1_AssetSecurity, AssetSecurity__Output as _tinkoff_public_invest_api_contract_v1_AssetSecurity__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/AssetSecurity';
@@ -9,7 +9,7 @@ import type { AssetInstrument as _tinkoff_public_invest_api_contract_v1_AssetIns
 
 export interface AssetFull {
   'uid'?: (string);
-  'type'?: (_tinkoff_public_invest_api_contract_v1_AssetType | keyof typeof _tinkoff_public_invest_api_contract_v1_AssetType);
+  'type'?: (_tinkoff_public_invest_api_contract_v1_AssetType);
   'name'?: (string);
   'nameBrief'?: (string);
   'description'?: (string);
@@ -31,7 +31,7 @@ export interface AssetFull {
 
 export interface AssetFull__Output {
   'uid': (string);
-  'type': (keyof typeof _tinkoff_public_invest_api_contract_v1_AssetType);
+  'type': (_tinkoff_public_invest_api_contract_v1_AssetType__Output);
   'name': (string);
   'nameBrief': (string);
   'description': (string);

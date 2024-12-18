@@ -3,7 +3,7 @@
 import type { PageResponse as _tinkoff_public_invest_api_contract_v1_PageResponse, PageResponse__Output as _tinkoff_public_invest_api_contract_v1_PageResponse__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/PageResponse';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
-import type { Recommendation as _tinkoff_public_invest_api_contract_v1_Recommendation } from '../../../../../../tinkoff/public/invest/api/contract/v1/Recommendation';
+import type { Recommendation as _tinkoff_public_invest_api_contract_v1_Recommendation, Recommendation__Output as _tinkoff_public_invest_api_contract_v1_Recommendation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Recommendation';
 
 export interface _tinkoff_public_invest_api_contract_v1_GetConsensusForecastsResponse_ConsensusForecastsItem {
   'uid'?: (string);
@@ -16,7 +16,7 @@ export interface _tinkoff_public_invest_api_contract_v1_GetConsensusForecastsRes
   'totalHoldRecommend'?: (number);
   'totalSellRecommend'?: (number);
   'currency'?: (string);
-  'consensus'?: (_tinkoff_public_invest_api_contract_v1_Recommendation | keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'consensus'?: (_tinkoff_public_invest_api_contract_v1_Recommendation);
   'prognosisDate'?: (_google_protobuf_Timestamp | null);
 }
 
@@ -31,7 +31,7 @@ export interface _tinkoff_public_invest_api_contract_v1_GetConsensusForecastsRes
   'totalHoldRecommend': (number);
   'totalSellRecommend': (number);
   'currency': (string);
-  'consensus': (keyof typeof _tinkoff_public_invest_api_contract_v1_Recommendation);
+  'consensus': (_tinkoff_public_invest_api_contract_v1_Recommendation__Output);
   'prognosisDate': (_google_protobuf_Timestamp__Output | null);
 }
 

@@ -3,8 +3,10 @@
 
 export interface GetStrategiesRequest {
   'strategyId'?: (string);
+  '_strategyId'?: "strategyId";
 }
 
 export interface GetStrategiesRequest__Output {
-  'strategyId': (string);
+  'strategyId'?: (string);
+  '_strategyId': "strategyId";
 }

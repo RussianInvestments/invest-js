@@ -2,7 +2,7 @@
 
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
-import type { CouponType as _tinkoff_public_invest_api_contract_v1_CouponType } from '../../../../../../tinkoff/public/invest/api/contract/v1/CouponType';
+import type { CouponType as _tinkoff_public_invest_api_contract_v1_CouponType, CouponType__Output as _tinkoff_public_invest_api_contract_v1_CouponType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/CouponType';
 import type { Long } from '@grpc/proto-loader';
 
 export interface Coupon {
@@ -11,7 +11,7 @@ export interface Coupon {
   'couponNumber'?: (number | string | Long);
   'fixDate'?: (_google_protobuf_Timestamp | null);
   'payOneBond'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
-  'couponType'?: (_tinkoff_public_invest_api_contract_v1_CouponType | keyof typeof _tinkoff_public_invest_api_contract_v1_CouponType);
+  'couponType'?: (_tinkoff_public_invest_api_contract_v1_CouponType);
   'couponStartDate'?: (_google_protobuf_Timestamp | null);
   'couponEndDate'?: (_google_protobuf_Timestamp | null);
   'couponPeriod'?: (number);
@@ -23,7 +23,7 @@ export interface Coupon__Output {
   'couponNumber': (string);
   'fixDate': (_google_protobuf_Timestamp__Output | null);
   'payOneBond': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
-  'couponType': (keyof typeof _tinkoff_public_invest_api_contract_v1_CouponType);
+  'couponType': (_tinkoff_public_invest_api_contract_v1_CouponType__Output);
   'couponStartDate': (_google_protobuf_Timestamp__Output | null);
   'couponEndDate': (_google_protobuf_Timestamp__Output | null);
   'couponPeriod': (number);

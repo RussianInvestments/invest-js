@@ -3,7 +3,7 @@
 import type { Order as _tinkoff_public_invest_api_contract_v1_Order, Order__Output as _tinkoff_public_invest_api_contract_v1_Order__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Order';
 import type { Timestamp as _google_protobuf_Timestamp, Timestamp__Output as _google_protobuf_Timestamp__Output } from '../../../../../../google/protobuf/Timestamp';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
-import type { OrderBookType as _tinkoff_public_invest_api_contract_v1_OrderBookType } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderBookType';
+import type { OrderBookType as _tinkoff_public_invest_api_contract_v1_OrderBookType, OrderBookType__Output as _tinkoff_public_invest_api_contract_v1_OrderBookType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OrderBookType';
 
 export interface OrderBook {
   'figi'?: (string);
@@ -15,7 +15,7 @@ export interface OrderBook {
   'limitUp'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'limitDown'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'instrumentUid'?: (string);
-  'orderBookType'?: (_tinkoff_public_invest_api_contract_v1_OrderBookType | keyof typeof _tinkoff_public_invest_api_contract_v1_OrderBookType);
+  'orderBookType'?: (_tinkoff_public_invest_api_contract_v1_OrderBookType);
 }
 
 export interface OrderBook__Output {
@@ -28,5 +28,5 @@ export interface OrderBook__Output {
   'limitUp': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'limitDown': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'instrumentUid': (string);
-  'orderBookType': (keyof typeof _tinkoff_public_invest_api_contract_v1_OrderBookType);
+  'orderBookType': (_tinkoff_public_invest_api_contract_v1_OrderBookType__Output);
 }

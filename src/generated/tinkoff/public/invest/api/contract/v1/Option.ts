@@ -1,11 +1,11 @@
 // Original file: investAPI/src/docs/contracts/instruments.proto
 
-import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
-import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
-import type { OptionDirection as _tinkoff_public_invest_api_contract_v1_OptionDirection } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionDirection';
-import type { OptionPaymentType as _tinkoff_public_invest_api_contract_v1_OptionPaymentType } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionPaymentType';
-import type { OptionStyle as _tinkoff_public_invest_api_contract_v1_OptionStyle } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionStyle';
-import type { OptionSettlementType as _tinkoff_public_invest_api_contract_v1_OptionSettlementType } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionSettlementType';
+import type { SecurityTradingStatus as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus, SecurityTradingStatus__Output as _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/SecurityTradingStatus';
+import type { RealExchange as _tinkoff_public_invest_api_contract_v1_RealExchange, RealExchange__Output as _tinkoff_public_invest_api_contract_v1_RealExchange__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/RealExchange';
+import type { OptionDirection as _tinkoff_public_invest_api_contract_v1_OptionDirection, OptionDirection__Output as _tinkoff_public_invest_api_contract_v1_OptionDirection__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionDirection';
+import type { OptionPaymentType as _tinkoff_public_invest_api_contract_v1_OptionPaymentType, OptionPaymentType__Output as _tinkoff_public_invest_api_contract_v1_OptionPaymentType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionPaymentType';
+import type { OptionStyle as _tinkoff_public_invest_api_contract_v1_OptionStyle, OptionStyle__Output as _tinkoff_public_invest_api_contract_v1_OptionStyle__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionStyle';
+import type { OptionSettlementType as _tinkoff_public_invest_api_contract_v1_OptionSettlementType, OptionSettlementType__Output as _tinkoff_public_invest_api_contract_v1_OptionSettlementType__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/OptionSettlementType';
 import type { BrandData as _tinkoff_public_invest_api_contract_v1_BrandData, BrandData__Output as _tinkoff_public_invest_api_contract_v1_BrandData__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/BrandData';
 import type { Quotation as _tinkoff_public_invest_api_contract_v1_Quotation, Quotation__Output as _tinkoff_public_invest_api_contract_v1_Quotation__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/Quotation';
 import type { MoneyValue as _tinkoff_public_invest_api_contract_v1_MoneyValue, MoneyValue__Output as _tinkoff_public_invest_api_contract_v1_MoneyValue__Output } from '../../../../../../tinkoff/public/invest/api/contract/v1/MoneyValue';
@@ -17,12 +17,12 @@ export interface Option {
   'ticker'?: (string);
   'classCode'?: (string);
   'basicAssetPositionUid'?: (string);
-  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus | keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
-  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange | keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
-  'direction'?: (_tinkoff_public_invest_api_contract_v1_OptionDirection | keyof typeof _tinkoff_public_invest_api_contract_v1_OptionDirection);
-  'paymentType'?: (_tinkoff_public_invest_api_contract_v1_OptionPaymentType | keyof typeof _tinkoff_public_invest_api_contract_v1_OptionPaymentType);
-  'style'?: (_tinkoff_public_invest_api_contract_v1_OptionStyle | keyof typeof _tinkoff_public_invest_api_contract_v1_OptionStyle);
-  'settlementType'?: (_tinkoff_public_invest_api_contract_v1_OptionSettlementType | keyof typeof _tinkoff_public_invest_api_contract_v1_OptionSettlementType);
+  'tradingStatus'?: (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
+  'realExchange'?: (_tinkoff_public_invest_api_contract_v1_RealExchange);
+  'direction'?: (_tinkoff_public_invest_api_contract_v1_OptionDirection);
+  'paymentType'?: (_tinkoff_public_invest_api_contract_v1_OptionPaymentType);
+  'style'?: (_tinkoff_public_invest_api_contract_v1_OptionStyle);
+  'settlementType'?: (_tinkoff_public_invest_api_contract_v1_OptionSettlementType);
   'name'?: (string);
   'currency'?: (string);
   'settlementCurrency'?: (string);
@@ -65,12 +65,12 @@ export interface Option__Output {
   'ticker': (string);
   'classCode': (string);
   'basicAssetPositionUid': (string);
-  'tradingStatus': (keyof typeof _tinkoff_public_invest_api_contract_v1_SecurityTradingStatus);
-  'realExchange': (keyof typeof _tinkoff_public_invest_api_contract_v1_RealExchange);
-  'direction': (keyof typeof _tinkoff_public_invest_api_contract_v1_OptionDirection);
-  'paymentType': (keyof typeof _tinkoff_public_invest_api_contract_v1_OptionPaymentType);
-  'style': (keyof typeof _tinkoff_public_invest_api_contract_v1_OptionStyle);
-  'settlementType': (keyof typeof _tinkoff_public_invest_api_contract_v1_OptionSettlementType);
+  'tradingStatus': (_tinkoff_public_invest_api_contract_v1_SecurityTradingStatus__Output);
+  'realExchange': (_tinkoff_public_invest_api_contract_v1_RealExchange__Output);
+  'direction': (_tinkoff_public_invest_api_contract_v1_OptionDirection__Output);
+  'paymentType': (_tinkoff_public_invest_api_contract_v1_OptionPaymentType__Output);
+  'style': (_tinkoff_public_invest_api_contract_v1_OptionStyle__Output);
+  'settlementType': (_tinkoff_public_invest_api_contract_v1_OptionSettlementType__Output);
   'name': (string);
   'currency': (string);
   'settlementCurrency': (string);
