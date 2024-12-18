@@ -43,6 +43,8 @@ export interface Option {
   'dshortMin'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'minPriceIncrement'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'strikePrice'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
+  'dlongClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'dshortClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'expirationDate'?: (_google_protobuf_Timestamp | null);
   'firstTradeDate'?: (_google_protobuf_Timestamp | null);
   'lastTradeDate'?: (_google_protobuf_Timestamp | null);
@@ -91,6 +93,8 @@ export interface Option__Output {
   'dshortMin': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'minPriceIncrement': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'strikePrice': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'dlongClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'dshortClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'expirationDate': (_google_protobuf_Timestamp__Output | null);
   'firstTradeDate': (_google_protobuf_Timestamp__Output | null);
   'lastTradeDate': (_google_protobuf_Timestamp__Output | null);

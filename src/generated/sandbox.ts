@@ -90,6 +90,7 @@ export interface ProtoGrpcType {
               GetOrdersResponse: MessageTypeDefinition
               GetUserTariffRequest: MessageTypeDefinition
               GetUserTariffResponse: MessageTypeDefinition
+              InstrumentStatus: EnumTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               OpenSandboxAccountRequest: MessageTypeDefinition

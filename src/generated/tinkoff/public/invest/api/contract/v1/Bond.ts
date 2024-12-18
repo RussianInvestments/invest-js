@@ -64,6 +64,9 @@ export interface Bond {
   'riskLevel'?: (_tinkoff_public_invest_api_contract_v1_RiskLevel);
   'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
   'bondType'?: (_tinkoff_public_invest_api_contract_v1_BondType);
+  'callDate'?: (_google_protobuf_Timestamp | null);
+  'dlongClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'dshortClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
 }
 
 export interface Bond__Output {
@@ -120,4 +123,7 @@ export interface Bond__Output {
   'riskLevel': (_tinkoff_public_invest_api_contract_v1_RiskLevel__Output);
   'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
   'bondType': (_tinkoff_public_invest_api_contract_v1_BondType__Output);
+  'callDate': (_google_protobuf_Timestamp__Output | null);
+  'dlongClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'dshortClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
 }

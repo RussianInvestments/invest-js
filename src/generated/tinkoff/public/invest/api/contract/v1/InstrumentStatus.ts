@@ -1,4 +1,4 @@
-// Original file: investAPI/src/docs/contracts/instruments.proto
+// Original file: investAPI/src/docs/contracts/common.proto
 
 export const InstrumentStatus = {
   INSTRUMENT_STATUS_UNSPECIFIED: 'INSTRUMENT_STATUS_UNSPECIFIED',

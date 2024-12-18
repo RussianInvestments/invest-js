@@ -52,6 +52,8 @@ export interface Future {
   'initialMarginOnSell'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'minPriceIncrementAmount'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
   'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
+  'dlongClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'dshortClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
 }
 
 export interface Future__Output {
@@ -99,4 +101,6 @@ export interface Future__Output {
   'initialMarginOnSell': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'minPriceIncrementAmount': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
   'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
+  'dlongClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'dshortClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
 }

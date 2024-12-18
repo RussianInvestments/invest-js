@@ -4,10 +4,12 @@ import type { PingDelaySettings as _tinkoff_public_invest_api_contract_v1_PingDe
 
 export interface PositionsStreamRequest {
   'accounts'?: (string)[];
+  'withInitialPositions'?: (boolean);
   'pingSettings'?: (_tinkoff_public_invest_api_contract_v1_PingDelaySettings | null);
 }
 
 export interface PositionsStreamRequest__Output {
   'accounts': (string)[];
+  'withInitialPositions': (boolean);
   'pingSettings': (_tinkoff_public_invest_api_contract_v1_PingDelaySettings__Output | null);
 }

@@ -48,6 +48,7 @@ export interface ProtoGrpcType {
               GetSignalsResponse: MessageTypeDefinition
               GetStrategiesRequest: MessageTypeDefinition
               GetStrategiesResponse: MessageTypeDefinition
+              InstrumentStatus: EnumTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               Page: MessageTypeDefinition

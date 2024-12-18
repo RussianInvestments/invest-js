@@ -12,6 +12,7 @@ export interface PositionsResponse {
   'limitsLoadingInProgress'?: (boolean);
   'futures'?: (_tinkoff_public_invest_api_contract_v1_PositionsFutures)[];
   'options'?: (_tinkoff_public_invest_api_contract_v1_PositionsOptions)[];
+  'accountId'?: (string);
 }
 
 export interface PositionsResponse__Output {
@@ -21,4 +22,5 @@ export interface PositionsResponse__Output {
   'limitsLoadingInProgress': (boolean);
   'futures': (_tinkoff_public_invest_api_contract_v1_PositionsFutures__Output)[];
   'options': (_tinkoff_public_invest_api_contract_v1_PositionsOptions__Output)[];
+  'accountId': (string);
 }

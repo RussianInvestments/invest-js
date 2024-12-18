@@ -20,6 +20,7 @@ export interface ProtoGrpcType {
             v1: {
               BrandData: MessageTypeDefinition
               ErrorDetail: MessageTypeDefinition
+              InstrumentStatus: EnumTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               Page: MessageTypeDefinition
