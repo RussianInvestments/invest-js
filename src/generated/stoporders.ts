@@ -49,6 +49,7 @@ export interface ProtoGrpcType {
               ExchangeOrderType: EnumTypeDefinition
               GetStopOrdersRequest: MessageTypeDefinition
               GetStopOrdersResponse: MessageTypeDefinition
+              InstrumentStatus: EnumTypeDefinition
               InstrumentType: EnumTypeDefinition
               MoneyValue: MessageTypeDefinition
               Page: MessageTypeDefinition

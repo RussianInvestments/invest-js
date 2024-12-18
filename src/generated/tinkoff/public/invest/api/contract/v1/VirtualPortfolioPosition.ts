@@ -16,6 +16,7 @@ export interface VirtualPortfolioPosition {
   'expireDate'?: (_google_protobuf_Timestamp | null);
   'currentPrice'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'averagePositionPriceFifo'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
+  'dailyYield'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
 }
 
 export interface VirtualPortfolioPosition__Output {
@@ -30,4 +31,5 @@ export interface VirtualPortfolioPosition__Output {
   'expireDate': (_google_protobuf_Timestamp__Output | null);
   'currentPrice': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'averagePositionPriceFifo': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'dailyYield': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
 }

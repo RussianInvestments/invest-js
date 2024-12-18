@@ -18,6 +18,8 @@ export interface PortfolioResponse {
   'totalAmountSp'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'totalAmountPortfolio'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'virtualPositions'?: (_tinkoff_public_invest_api_contract_v1_VirtualPortfolioPosition)[];
+  'dailyYield'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
+  'dailyYieldRelative'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
 }
 
 export interface PortfolioResponse__Output {
@@ -33,4 +35,6 @@ export interface PortfolioResponse__Output {
   'totalAmountSp': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'totalAmountPortfolio': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'virtualPositions': (_tinkoff_public_invest_api_contract_v1_VirtualPortfolioPosition__Output)[];
+  'dailyYield': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
+  'dailyYieldRelative': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
 }

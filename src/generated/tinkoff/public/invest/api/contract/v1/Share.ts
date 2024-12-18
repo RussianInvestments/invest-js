@@ -54,6 +54,8 @@ export interface Share {
   'first_1minCandleDate'?: (_google_protobuf_Timestamp | null);
   'first_1dayCandleDate'?: (_google_protobuf_Timestamp | null);
   'brand'?: (_tinkoff_public_invest_api_contract_v1_BrandData | null);
+  'dlongClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'dshortClient'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
 }
 
 export interface Share__Output {
@@ -100,4 +102,6 @@ export interface Share__Output {
   'first_1minCandleDate': (_google_protobuf_Timestamp__Output | null);
   'first_1dayCandleDate': (_google_protobuf_Timestamp__Output | null);
   'brand': (_tinkoff_public_invest_api_contract_v1_BrandData__Output | null);
+  'dlongClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'dshortClient': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
 }

@@ -20,6 +20,7 @@ export interface PortfolioPosition {
   'instrumentUid'?: (string);
   'varMargin'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
   'expectedYieldFifo'?: (_tinkoff_public_invest_api_contract_v1_Quotation | null);
+  'dailyYield'?: (_tinkoff_public_invest_api_contract_v1_MoneyValue | null);
 }
 
 export interface PortfolioPosition__Output {
@@ -39,4 +40,5 @@ export interface PortfolioPosition__Output {
   'instrumentUid': (string);
   'varMargin': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
   'expectedYieldFifo': (_tinkoff_public_invest_api_contract_v1_Quotation__Output | null);
+  'dailyYield': (_tinkoff_public_invest_api_contract_v1_MoneyValue__Output | null);
 }

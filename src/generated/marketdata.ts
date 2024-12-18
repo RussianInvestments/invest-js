@@ -72,6 +72,7 @@ export interface ProtoGrpcType {
               InfoSubscription: MessageTypeDefinition
               InstrumentClosePriceRequest: MessageTypeDefinition
               InstrumentClosePriceResponse: MessageTypeDefinition
+              InstrumentStatus: EnumTypeDefinition
               InstrumentType: EnumTypeDefinition
               LastPrice: MessageTypeDefinition
               LastPriceInstrument: MessageTypeDefinition
