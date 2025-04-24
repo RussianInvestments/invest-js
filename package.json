@@ -1,13 +1,13 @@
 {
   "name": "@tinkoff/invest-js",
-  "version": "1.27.0",
+  "version": "1.27.1-RC4",
   "description": "T-Invest OpenAPI Client",
   "types": "./build/index.d.ts",
   "engines": {
     "node": ">=18.0.0"
   },
   "directories": {
-    "example": "example"
+    "example": "examples"
   },
   "exports": {
     ".": "./build/index.js"
@@ -15,8 +15,8 @@
   "scripts": {
     "build": "sh ./tools/build.sh",
     "gen": "sh ./tools/gen.sh",
+    "gen-ts": "sh ./tools/gen-ts.sh",
     "watch": "tsc --watch",
-    "prepublishOnly": "echo 'git push --follow-tags && gh-release -y'",
     "version": "auto-changelog -p --template keepachangelog auto-changelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md"
   },
   "repository": {
@@ -31,17 +31,38 @@
   ],
   "license": "Apache-2.0",
   "devDependencies": {
-    "auto-changelog": "^1.16.2",
-    "gh-release": "^7.0.2",
-    "ts-node": "^10.9.2"
-  },
-  "dependencies": {
+    "@eslint/js": "^9.8.0",
+    "@nx/esbuild": "20.8.0",
+    "@nx/eslint": "20.8.0",
+    "@nx/eslint-plugin": "20.8.0",
+    "@nx/js": "^20.8.0",
+    "@nx/node": "^20.8.0",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
     "@grpc/grpc-js": "^1.12.2",
     "@grpc/proto-loader": "^0.7.13",
     "@types/node": "^22.8.5",
-    "grpc-tools": "^1.12.4",
+    "auto-changelog": "^1.16.2",
+    "esbuild": "^0.19.2",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.0.0",
+    "gh-release": "^7.0.2",
+    "grpc-tools": "^1.13.0",
+    "jsonc-eslint-parser": "^2.1.0",
+    "nx": "20.8.0",
     "prettier": "^3.3.3",
-    "tslib": "^2.0.0",
+    "ts-node": "^10.9.2",
+    "ts-proto": "^2.7.0",
+    "typescript-eslint": "^8.19.0",
     "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "long": "^5.3.2",
+    "nice-grpc": "^2.1.10",
+    "nice-grpc-web": "^3.3.7",
+    "node-pre-gyp": "^0.17.0",
+    "protobufjs": "^7.5.0",
+    "tslib": "^2.3.0"
   }
 }

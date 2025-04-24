@@ -1,0 +1,7 @@
+{
+  "name": "grpc",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/grpc/proto",
+  "projectType": "library",
+  "tags": ["scope:contract"]
+}

@@ -1,0 +1,1 @@
+export { TTechApiClient } from './client'

@@ -1,5 +1,11 @@
 .idea
 build
+compiled
+dist
 node_modules
+
 package-lock.json
 example/.env
+
+.nx/cache
+.nx/workspace-data
