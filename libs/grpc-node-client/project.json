@@ -1,0 +1,21 @@
+{
+  "name": "grpc-node-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/grpc-node-client/src",
+  "projectType": "library",
+  "tags": ["scope:client"],
+  "implicitDependencies": ["grpc"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/grpc-node-client",
+        "tsConfig": "libs/grpc-node-client/tsconfig.lib.json",
+        "packageJson": "libs/grpc-node-client/package.json",
+        "main": "libs/grpc-node-client/src/index.ts",
+        "assets": ["libs/grpc-node-client/*.md"]
+      }
+    }
+  }
+}

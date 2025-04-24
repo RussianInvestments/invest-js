@@ -1,0 +1,16 @@
+{
+  "name": "@tinkoff/grpc-web-client",
+  "description": "T-Tech Invest GRPC-web API client",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RussianInvestments/invest-js"
+  },
+  "keywords": [
+    "trading",
+    "investment",
+    "grpc-web"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "grpc-web-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/grpc-web-client/src",
+  "projectType": "library",
+  "tags": ["scope:client"],
+  "implicitDependencies": ["grpc"],
+  "targets": {
+    "gen": {
+      "outputs": ["{projectRoot}/./src/generated"],
+      "cache": true
+    },
+    "generate-web": {
+      "executor": "nx:run-commands",
+      "inputs": ["{workspaceRoot}/libs/grpc/proto/**/*.proto"],
+      "outputs": ["{projectRoot}/compiled"],
+      "cache": true,
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "parallel": false,
+        "commands": [
+          "rm -rf {projectRoot}/compiled",
+          "mkdir {projectRoot}/compiled",
+          {
+            "command": "bash ./tools/generate-web-client.sh",
+            "description": "Генерация спецификаций для веба на основе GRPC контракта"
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["generate-web"],
+      "options": {
+        "outputPath": "dist/libs/grpc-web-client",
+        "main": "libs/grpc-web-client/src/index.ts",
+        "tsConfig": "libs/grpc-web-client/tsconfig.lib.json",
+        "assets": ["libs/grpc-web-client/*.md"],
+        "format": ["cjs"]
+      }
+    }
+  }
+}
