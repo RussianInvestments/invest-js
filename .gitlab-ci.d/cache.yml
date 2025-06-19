@@ -1,0 +1,21 @@
+.cache::node_modules:
+  cache:
+    - key:
+        prefix: $NODE_VERSION
+        files:
+          - package-lock.json
+      paths:
+        - node_modules
+        - $NPM_CACHE_PATH
+      policy: pull-push
+
+.cache::node_modules::pull-only:
+  cache:
+    - key:
+        prefix: $NODE_VERSION
+        files:
+          - package-lock.json
+      paths:
+        - node_modules
+        - $NPM_CACHE_PATH
+      policy: pull

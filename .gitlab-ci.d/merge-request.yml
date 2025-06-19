@@ -1,0 +1,62 @@
+include:
+  - local: '/.gitlab-ci.d/cache.yml'
+
+# Workflow позволяет не писать для каждой джобы `only: merge_requests`
+# Работает СОВМЕСТНО с условием подключения файла пайплайна в корневом .gitlab-ci.yml
+# Если workflow удалить, джобы перестанут подключаться и пайплайн будет пустым.
+# Требуется только для mr пайплайна, веточные работают без workflow, такова особенность Gitlab
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+variables:
+  NX_HEAD: $CI_COMMIT_SHA
+  NX_BASE: $CI_MERGE_REQUEST_DIFF_BASE_SHA
+
+install:
+  stage: install
+  variables:
+    # Эта переменная нужна для настройки `node-pre-gyp`, которая скачивает бинарник для
+    # `grpc-tools`, чтобы не выполнять его сборку. Бинарник лежит в нашем бакете.
+    # В случае обновления версии бинарника, нужно его в бакет загрузить.
+    npm_config_grpc_tools_binary_host_mirror: https://invest-sdk-cicd.s3-msk.tinkoff.ru/
+  extends:
+    - .cache::node_modules
+  script:
+    - npm ci --cache $NPM_CACHE_PATH --prefer-offline --audit=false --fund=false
+
+build:
+  stage: build
+  extends:
+    - .cache::node_modules::pull-only
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target build --exclude=nest-js --output-style=static
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'success' ]; then
+        echo -e "$COLOR_GREEN
+        ***********************************************************
+          Джоба собирает все изменившиеся в рамках МР пакеты и приложения.
+        ***********************************************************
+        $FORMAT_END"
+      fi
+  artifacts:
+    paths:
+      - dist/libs/**/*
+    expire_in: 1h
+
+lint:
+  stage: quality
+  extends:
+    - .cache::node_modules::pull-only
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'success' ]; then
+        echo -e "$COLOR_GREEN
+        ***********************************************************
+          Джоба запускает ESLint на изменившихся пакетах.
+        ***********************************************************
+        $FORMAT_END"
+      fi
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target lint --output-style=static

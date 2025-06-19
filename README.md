@@ -1,4 +1,5 @@
 # Trading Open API - JS SDK
+
 ![Package build](https://github.com/whonion/invest-js/actions/workflows/build.yml/badge.svg)<br>
 SDK для работы с OpenAPI Тинькофф Инвестиции, который можно использовать для создания торговых роботов.
 
@@ -22,11 +23,27 @@ SDK для работы с OpenAPI Тинькофф Инвестиции, кот
 
 ## Пример
 
-см. более сложный пример в [example](./example)
+с версии 1.28 клиент с поддержкой promise [подробнее](https://github.com/deeplay-io/nice-grpc/tree/master/packages/nice-grpc#client)
 
 ```typescript
+import { TTechApiClient } from '@tinkoff/invest-js';
 
+const clientV2 = new TTechApiClient({
+  token: process.env.TOKEN as string,
+});
+
+try {
+  response = await clientV2.instruments.shares({});
+} catch (error: unknown) {
+  if (error instanceof ClientError && error.code === Status.NOT_FOUND) {
+    response = null;
+  } else {
+    throw error;
+  }
+}
 ```
+
+см. более сложные примеры в [examples](./examples)
 
 ## Sandbox
 
@@ -51,3 +68,8 @@ client.instruments.shares({}, (x, y) => {
   );
 });
 ```
+
+# Отдельные библиотеки
+
+- grpc [@tinkoff/invest-js-grpc](grpc/)
+- Поддержка grpc-web [@tinkoff/invest-js-grpc-web](grpc-web/)

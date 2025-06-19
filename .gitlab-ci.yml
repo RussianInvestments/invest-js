@@ -1,0 +1,55 @@
+#
+# Процессы CI/CD разделены по файлам:
+# 1) ./.gitlab-ci.d/merge-request.yml
+#
+
+default:
+  # Большинство джоб запускается в nodejs образе
+  image: docker-hosted.artifactory.tcsbank.ru/cicd-images/nodejs-$NODE_VERSION:latest
+  # Позволяет отменить текущие джобы (и освободить ранеры) после обновления ветки
+  interruptible: true
+
+variables:
+  NODE_VERSION: '20'
+  NPM_CACHE_PATH: '.npm'
+  CI: 'true'
+  GIT_DEPTH: '0'
+
+  TEXT_BOLD:
+    description: 'Код для выделения текста жирным'
+    value: \e[1m
+  COLOR_RED:
+    description: 'Код для красного цвета вывода терминала'
+    value: \e[31m
+  COLOR_GREEN:
+    description: 'Код для красного цвета вывода терминала'
+    value: \e[32m
+  FORMAT_END:
+    description: 'Код для сбрасывания форматирования вывода терминала'
+    value: \e[0m
+
+stages:
+  - update # master only
+  - install
+  - build
+  - quality
+  - deploy
+  - publish # release only
+  - finalize
+
+# Подключаются (по условию rules) только нужные yml файлы.
+# Это нивелирует риск ошибки, когда неправильно оформленная джоба
+# может выскочить не в своем пайплайне.
+include:
+  # Пайплайн мержреквеста, запускается только в мержреквестах
+  - local: '/.gitlab-ci.d/merge-request.yml'
+    rules:
+      - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+# Пайплайн мастер ветки
+#  - local: '/.gitlab-ci.d/master.yml'
+#    rules:
+#      - if: $CI_COMMIT_BRANCH == 'main' && $CI_PIPELINE_SOURCE == 'push'
+# Пайплайн релизный, запускается только в релизных тегах `v`
+#  - local: '/.gitlab-ci.d/release.yml'
+#    rules:
+#      - if: $CI_COMMIT_TAG =~ /v/

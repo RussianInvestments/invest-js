@@ -1,0 +1,43 @@
+{
+  "name": "grpc-node-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/grpc-node-client/src",
+  "projectType": "library",
+  "tags": ["scope:client"],
+  "implicitDependencies": ["grpc"],
+  "targets": {
+    "generate": {
+      "executor": "nx:run-commands",
+      "inputs": ["{workspaceRoot}/libs/grpc/proto/**/*.proto"],
+      "outputs": ["{projectRoot}/compiled"],
+      "cache": false,
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "parallel": false,
+        "commands": [
+          "rm -rf {projectRoot}/compiled",
+          "mkdir {projectRoot}/compiled",
+          {
+            "command": "bash {projectRoot}/tools/generate.sh",
+            "description": "Генерация спецификаций для NodeJS на основе GRPC контракта"
+          }
+        ]
+      }
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": ["generate"],
+      "options": {
+        "outputPath": "dist/libs/grpc-node-client",
+        "tsConfig": "libs/grpc-node-client/tsconfig.lib.json",
+        "packageJson": "libs/grpc-node-client/package.json",
+        "format": ["commonjs"],
+        "platform": "node",
+        "minify": true,
+        "main": "libs/grpc-node-client/src/index.ts",
+        "assets": ["libs/grpc-node-client/*.md"]
+      }
+    }
+  }
+}

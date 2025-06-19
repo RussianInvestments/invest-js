@@ -1,8 +1,8 @@
 import 'dotenv/config';
-import {OpenAPIClient} from '../src';
-import {InstrumentIdType} from '../build/generated/tinkoff/public/invest/api/contract/v1/InstrumentIdType';
-import {OrderDirection} from "../src/generated/tinkoff/public/invest/api/contract/v1/OrderDirection";
-import {OrderType} from "../src/generated/tinkoff/public/invest/api/contract/v1/OrderType";
+import { OpenAPIClient } from '../../src';
+import { InstrumentIdType } from '../../build/generated/tinkoff/public/invest/api/contract/v1/InstrumentIdType';
+import { OrderDirection } from '../../src/generated/tinkoff/public/invest/api/contract/v1/OrderDirection';
+import { OrderType } from '../../src/generated/tinkoff/public/invest/api/contract/v1/OrderType';
 
 const client = new OpenAPIClient({
   token: process.env.TOKEN as string,
@@ -10,7 +10,7 @@ const client = new OpenAPIClient({
 
 const sandboxClient = new OpenAPIClient({
   token: process.env.TOKEN as string,
-  url: 'http://sandbox-invest-public-api.tinkoff.ru'
+  url: 'http://sandbox-invest-public-api.tinkoff.ru',
 });
 
 // InstrumentsService
@@ -77,81 +77,71 @@ marketDataStream.write({
   },
 });
 
-
 const postOrderArguments = {
-  figi: "figi",
-  accountId: "my_account_id",
+  figi: 'figi',
+  accountId: 'my_account_id',
   direction: OrderDirection.ORDER_DIRECTION_BUY,
   orderType: OrderType.ORDER_TYPE_MARKET,
   price: {
-    units: 10
+    units: 10,
   },
-  orderId: "1234-qwer-1234-tyui",
-  quantity: 1
+  orderId: '1234-qwer-1234-tyui',
+  quantity: 1,
 };
 
 //Выставление ордера в песочнице
-sandboxClient.orders.postOrder(
-    postOrderArguments,
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+sandboxClient.orders.postOrder(postOrderArguments, (_, x) => {
+  console.log(_, x);
+});
 //Выставление ордера в настоящем API
-client.orders.postOrder(
-    postOrderArguments,
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+client.orders.postOrder(postOrderArguments, (_, x) => {
+  console.log(_, x);
+});
 //получение операций в песочнице
 sandboxClient.operations.getOperations(
-    {
-      from: {
-        seconds: 1628492201
-      },
-      to: {
-        seconds: 1660028201
-      },
-      accountId: "my_account_id"
+  {
+    from: {
+      seconds: 1628492201,
     },
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+    to: {
+      seconds: 1660028201,
+    },
+    accountId: 'my_account_id',
+  },
+  (_, x) => {
+    console.log(_, x);
+  }
+);
 
 //пополнение счета в песочнице в USD
 sandboxClient.sandbox.sandboxPayIn(
-    {
-      accountId: "my_account_id",
-      amount: {
-        currency: "usd",
-        units: 1000
-      }
+  {
+    accountId: 'my_account_id',
+    amount: {
+      currency: 'usd',
+      units: 1000,
     },
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+  },
+  (_, x) => {
+    console.log(_, x);
+  }
+);
 
 //пополнение счета в песочнице в RUB
 sandboxClient.sandbox.sandboxPayIn(
-    {
-      accountId: "my_account_id",
-      amount: {
-        currency: "rub",
-        units: 1000
-      }
+  {
+    accountId: 'my_account_id',
+    amount: {
+      currency: 'rub',
+      units: 1000,
     },
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+  },
+  (_, x) => {
+    console.log(_, x);
+  }
+);
 
 //получение списка аккаунтов песочницы
-sandboxClient.usersService.getAccounts(
-    {},
-    (_, x) => {
-      console.log(_, x);
-    }
-)
+sandboxClient.usersService.getAccounts({}, (_, x) => {
+  console.log(_, x);
+});

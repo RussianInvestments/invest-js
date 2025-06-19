@@ -8,8 +8,10 @@ import type {
   StopordersType,
   UsersType,
 } from './types';
+
 import { PROTO_PATH } from './constants';
 import { load } from './load';
+import { TTechApiClient } from './client2';
 import { InstrumentsService } from './services/InstrumentsService';
 
 export const { SandboxService } = load<SandboxType>(PROTO_PATH + 'sandbox.proto');
@@ -45,12 +47,12 @@ class OpenAPIClient {
     this.token = options.token;
     this.url = options.url || 'invest-public-api.tinkoff.ru:443';
 
-    const providedMetadata = options.metadata || {}
+    const providedMetadata = options.metadata || {};
 
     const metadata = new Metadata();
     metadata.add('Authorization', 'Bearer ' + this.token);
     for (const providedMetadataKey in providedMetadata) {
-      metadata.add(providedMetadataKey, providedMetadata[providedMetadataKey])
+      metadata.add(providedMetadataKey, providedMetadata[providedMetadataKey]);
     }
 
     const ssl_creds = credentials.combineChannelCredentials(
@@ -71,3 +73,14 @@ class OpenAPIClient {
 }
 
 export { OpenAPIClient };
+
+export { TTechApiClient };
+
+export * from './compiled_contracts/instruments';
+export * from './compiled_contracts/marketdata';
+export * from './compiled_contracts/orders';
+export * from './compiled_contracts/operations';
+export * from './compiled_contracts/stoporders';
+export * from './compiled_contracts/users';
+export * from './compiled_contracts/common';
+export * from './compiled_contracts/sandbox';
