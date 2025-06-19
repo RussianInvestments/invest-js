@@ -13,7 +13,6 @@ variables:
   NODE_VERSION: '20'
   NPM_CACHE_PATH: '.npm'
   CI: 'true'
-  GIT_DEPTH: '0'
 
   TEXT_BOLD:
     description: 'Код для выделения текста жирным'
