@@ -1,0 +1,23 @@
+{
+  "name": "@t-tech/invest-rest-client",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "node --test --require ts-node/register --require tsconfig-paths/register ./**/*.test.ts",
+    "generate-client": "ts-node --project tsconfig.scripts.json ./scripts/generate-client.ts"
+  },
+  "dependencies": {
+    "@swc/helpers": "~0.5.11",
+    "@t-tech/invest-shared": "0.0.1"
+  },
+  "devDependencies": {
+    "yaml": "^2.8.0",
+    "platformatic": "^2.70.1",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "@types/node": "^24.0.4"
+  }
+}

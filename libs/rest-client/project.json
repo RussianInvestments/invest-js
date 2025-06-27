@@ -1,0 +1,31 @@
+{
+  "name": "rest-client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/rest-client/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/rest-client",
+        "main": "libs/rest-client/src/index.ts",
+        "tsConfig": "libs/rest-client/tsconfig.lib.json",
+        "assets": ["libs/rest-client/*.md"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "test"
+      }
+    },
+    "generate-clinet": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "generate-client"
+      }
+    }
+  }
+}

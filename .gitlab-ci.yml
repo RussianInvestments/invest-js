@@ -10,7 +10,7 @@ default:
   interruptible: true
 
 variables:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
   NPM_CACHE_PATH: '.npm'
   CI: 'true'
 

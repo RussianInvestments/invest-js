@@ -6,5 +6,10 @@ node_modules
 
 example/.env
 
-.nx/cache
-.nx/workspace-data
+.nx/*
+
+
+// VS Code Extensions 
+.history*
+
+tmp/*
