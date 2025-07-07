@@ -43,7 +43,7 @@ async function run() {
 
   const yamlDoc = await yaml.parseDocument(openAPIYaml);
 
-  let server:Server | null = null; 
+  let server:Server | null = null;
   try {
     server = createServer(function (_req, res) {
   res.statusCode = 200;

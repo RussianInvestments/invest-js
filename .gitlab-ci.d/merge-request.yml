@@ -43,6 +43,7 @@ build:
   artifacts:
     paths:
       - dist/libs/**/*
+      - libs/grpc-node-client/compiled/**/*
     expire_in: 1h
 
 lint:
@@ -60,3 +61,19 @@ lint:
       fi
   script:
     - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target lint --output-style=static
+
+test:
+  stage: quality
+  extends:
+    - .cache::node_modules::pull-only
+  after_script:
+    - >
+      if [ $CI_JOB_STATUS == 'success' ]; then
+        echo -e "$COLOR_GREEN
+        ***********************************************************
+          Джоба запускает Unit тесты на изменившихся пакетах.
+        ***********************************************************
+        $FORMAT_END"
+      fi
+  script:
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target test --output-style=static

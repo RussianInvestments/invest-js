@@ -1,0 +1,26 @@
+{
+  "name": "sdk-node",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sdk-node/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/sdk-node",
+        "tsConfig": "libs/sdk-node/tsconfig.lib.json",
+        "packageJson": "libs/sdk-node/package.json",
+        "main": "libs/sdk-node/src/index.ts",
+        "assets": ["libs/sdk-node/*.md"]
+      }
+    },
+     "test": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "test"
+      }
+    }
+  }
+}

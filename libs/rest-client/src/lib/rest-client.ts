@@ -8,7 +8,7 @@ interface InvestAPIClientOptions {
 }
 
 export class InvestAPIClient {
-  #client: GeneratedApiClient; 
+  #client: GeneratedApiClient;
   constructor(options: InvestAPIClientOptions) {
     if(!options.url) {
       throw new EmptyURLError('Empty URL');

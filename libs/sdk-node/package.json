@@ -1,0 +1,15 @@
+{
+  "name": "@t-tech/invest-sdk-node",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "node --test --require ts-node/register --require tsconfig-paths/register ./**/*.test.ts"
+  },
+  "dependencies": {
+    "@tinkoff/grpc-node-client": "0.0.1",
+    "@t-tech/invest-shared": "0.0.1"
+  }
+}

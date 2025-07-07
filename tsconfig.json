@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "paths": {
       "@t-tech/invest-rest-client": ["libs/rest-client/src/index.ts"],
+      "@t-tech/invest-sdk-node": ["libs/sdk-node/src/index.ts"],
       "@t-tech/invest-shared": ["libs/shared/src/index.ts"],
       "@tinkoff/grpc": ["libs/grpc/src/index.ts"],
       "@tinkoff/grpc-node-client": ["libs/grpc-node-client/src/index.ts"],
