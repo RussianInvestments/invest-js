@@ -73,3 +73,11 @@ client.instruments.shares({}, (x, y) => {
 
 - grpc [@tinkoff/invest-js-grpc](grpc/)
 - Поддержка grpc-web [@tinkoff/invest-js-grpc-web](grpc-web/)
+
+# Локальная разработка
+
+
+## Коммиты
+
+Если вы работаете через `$ git commit --amend`, то появление TUI с выбором типа коммита нажмите `Ctrl+С`
+

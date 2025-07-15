@@ -72,19 +72,16 @@ export type {
   PriceType,
   ResultSubscriptionStatus,
   MoneyValue,
-  Quotation,  
+  Quotation,
 } from '../compiled/common';
 
+export type { GetAccountsRequest, GetAccountsResponse } from '../compiled/users';
 
 export type {
-  GetAccountsRequest, GetAccountsResponse 
-} from '../compiled/users';
-
-export type {
-  PositionsRequest, PositionsResponse,
-  OperationsRequest, OperationsResponse, 
+  PositionsRequest,
+  PositionsResponse,
+  OperationsRequest,
+  OperationsResponse,
 } from '../compiled/operations';
 
-export {
-  OperationState
-} from '../compiled/operations';
+export { OperationState } from '../compiled/operations';

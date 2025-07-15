@@ -1,0 +1,17 @@
+pre-commit:
+  jobs:
+    - name: lint-staged
+      run: npm run pre-commit
+
+prepare-commit-msg:
+  commands:
+    commitizen:
+      interactive: true
+      run: ./prepare-commit-msg.sh
+      env:
+        LEFTHOOK: 0
+
+commit-msg:
+  commands:
+    "lint commit message":
+      run: npx commitlint --edit {1}

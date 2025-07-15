@@ -1,0 +1,13 @@
+if [ "$2" = "commit" ]; then
+  echo "Skipping prepare-commit-msg hook due to amend."
+  exit 0
+fi
+
+# If we're in the middle of an interactive rebase, GIT_SEQUENCE_EDITOR will be set.
+# We'll skip the hook in this case as well.
+if [ -n "$GIT_SEQUENCE_EDITOR" ]; then
+  echo "Skipping prepare-commit-msg hook due to rebase."
+  exit 0
+fi
+
+exec < /dev/tty && node_modules/.bin/cz --hook || true

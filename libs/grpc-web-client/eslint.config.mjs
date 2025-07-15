@@ -9,8 +9,8 @@ export default [
         'error',
         {
           ignoredFiles: [
-            '{projectRoot}/eslint.config.{js,cjs,mjs}',
             '{projectRoot}/esbuild.config.{js,ts,mjs,mts}',
+            '{projectRoot}/eslint.config.{js,cjs,mjs}',
           ],
         },
       ],
