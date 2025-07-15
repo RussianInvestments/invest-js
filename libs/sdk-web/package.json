@@ -1,17 +1,18 @@
 {
-  "name": "@t-tech/invest-sdk-node",
+  "name": "@tinkoff/sdk-web",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
+  "dependencies": {
+    "@swc/helpers": "~0.5.11",
+    "@t-tech/invest-shared": "0.0.1"
+  },
   "scripts": {
     "test": "node --test --import=tsx ./**/*.test.ts"
   },
-  "dependencies": {
-    "@t-tech/invest-shared": "0.0.1"
-  },
   "peerDependencies": {
-    "@tinkoff/grpc-node-client": "0.0.1"
+    "@t-tech/invest-grpc-web": "0.0.1"
   }
 }

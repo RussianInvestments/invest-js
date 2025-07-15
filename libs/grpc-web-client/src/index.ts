@@ -23,7 +23,7 @@ import { StopOrdersServiceClient, StopOrdersServiceDefinition } from '../compile
 import { SandboxServiceClient, SandboxServiceDefinition } from '../compiled/sandbox';
 import { UsersServiceClient, UsersServiceDefinition } from '../compiled/users';
 
-interface TTechAPIClientOptions {
+export interface TTechAPIClientOptions {
   token: string;
   url?: string;
   metadata?: Record<string, string>;
@@ -80,3 +80,16 @@ export type {
   MoneyValue,
   Quotation,
 } from '../compiled/common';
+
+export type {
+  GetAccountsRequest, GetAccountsResponse 
+} from '../compiled/users';
+
+export type {
+  PositionsRequest, PositionsResponse,
+  OperationsRequest, OperationsResponse, 
+} from '../compiled/operations';
+
+export {
+  OperationState
+} from '../compiled/operations';

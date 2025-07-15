@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
-    "test": "node --test --require ts-node/register --require tsconfig-paths/register ./**/*.test.ts",
+    "test": "node --test --import=tsx ./**/*.test.ts",
     "generate-client": "ts-node --project tsconfig.scripts.json ./scripts/generate-client.ts"
   },
   "dependencies": {

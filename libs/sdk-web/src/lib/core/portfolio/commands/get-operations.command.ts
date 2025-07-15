@@ -1,7 +1,7 @@
-import { OperationsRequest, OperationsResponse } from "@tinkoff/grpc-node-client";
+import { OperationsRequest, OperationsResponse } from "@t-tech/invest-grpc-web";
 import { APIService, BaseCommand } from "../../shared";
 
-export {OperationState} from '@tinkoff/grpc-node-client'
+export {OperationState} from '@t-tech/invest-grpc-web'
 
 export interface GetOperationsInput extends OperationsRequest { }
 

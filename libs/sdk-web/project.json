@@ -1,19 +1,18 @@
 {
-  "name": "sdk-node",
+  "name": "sdk-web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sdk-node/src",
+  "sourceRoot": "libs/sdk-web/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nx/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/sdk-node",
-        "tsConfig": "libs/sdk-node/tsconfig.lib.json",
-        "packageJson": "libs/sdk-node/package.json",
-        "main": "libs/sdk-node/src/index.ts",
-        "assets": ["libs/sdk-node/*.md"]
+        "outputPath": "dist/libs/sdk-web",
+        "main": "libs/sdk-web/src/index.ts",
+        "tsConfig": "libs/sdk-web/tsconfig.lib.json",
+        "assets": ["libs/sdk-web/*.md"]
       }
     },
     "test": {

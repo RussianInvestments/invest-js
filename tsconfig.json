@@ -13,7 +13,8 @@
       "@t-tech/invest-shared": ["libs/shared/src/index.ts"],
       "@tinkoff/grpc": ["libs/grpc/src/index.ts"],
       "@tinkoff/grpc-node-client": ["libs/grpc-node-client/src/index.ts"],
-      "@tinkoff/grpc-web-client": ["libs/grpc-web-client/src/index.ts"]
+      "@t-tech/invest-grpc-web": ["libs/grpc-web-client/src/index.ts"],
+      "@t-tech/sdk-web": ["libs/sdk-web/src/index.ts"]
     }
   },
   "exclude": ["examples/example", "examples/grpc-web-example", "build", "grpc", "grpc-web"]

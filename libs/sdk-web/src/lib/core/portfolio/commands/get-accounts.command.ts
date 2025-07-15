@@ -1,4 +1,4 @@
-import { GetAccountsRequest, GetAccountsResponse } from "@tinkoff/grpc-node-client";
+import { GetAccountsRequest, GetAccountsResponse } from "@t-tech/invest-grpc-web";
 import { APIService, BaseCommand } from "../../shared";
 
 export interface GetAccountsInput extends GetAccountsRequest { }

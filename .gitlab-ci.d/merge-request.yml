@@ -44,6 +44,7 @@ build:
     paths:
       - dist/libs/**/*
       - libs/grpc-node-client/compiled/**/*
+      - libs/grpc-web-client/compiled/**/*
     expire_in: 1h
 
 lint:

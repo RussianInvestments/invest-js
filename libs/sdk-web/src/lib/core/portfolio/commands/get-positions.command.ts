@@ -1,4 +1,4 @@
-import { PositionsRequest, PositionsResponse } from "@tinkoff/grpc-node-client";
+import { PositionsRequest, PositionsResponse } from "@t-tech/invest-grpc-web";
 import { APIService, BaseCommand } from "../../shared";
 
 export interface GetPositionsInput extends PositionsRequest { }
