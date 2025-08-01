@@ -5,7 +5,14 @@
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "node --test --import=tsx ./**/*.test.ts 'Decimal class - chain operations'"
+  },
   "dependencies": {
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.11",
+    "big.js": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/big.js": "^6.2.2"
   }
 }

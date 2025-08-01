@@ -9,7 +9,7 @@ class MockCommand extends BaseCommand<void, string> {
   }
 
   public override call(_client: APIService) {
-    return "hello";
+    return 'hello';
   }
 }
 
@@ -20,18 +20,13 @@ test('InvestWebSDK должен успешно создаться с валид�
 });
 
 test('InvestWebSDK должен выбросить EmptyTokenError при пустом токене', () => {
-  const invalidOptions = [
-    { token: null },
-    { token: undefined },
-    { token: '' },
-    {}
-  ];
+  const invalidOptions = [{ token: null }, { token: undefined }, { token: '' }, {}];
 
   for (const options of invalidOptions) {
     assert.throws(
       //@ts-expect-error allow for test
       () => new InvestWebSDK(options),
-      { name: 'Error', message: 'Token is empty' }
+      { name: 'EmptyTokenError', message: 'Token is empty' }
     );
   }
 });
@@ -40,7 +35,7 @@ test('InvestWebSDK.send должен вызвать команду с клиен
   const options = { token: 'valid-token' };
   const sdk = new InvestWebSDK(options);
 
-  const expectedResult = "hello";
+  const expectedResult = 'hello';
   const command = new MockCommand();
 
   const result = sdk.send(command);

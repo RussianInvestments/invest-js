@@ -1,12 +1,12 @@
 // copied from https://github.com/undb-io/undb/blob/1a32ce830059e763d6c1cf721ac031283633c9b0/packages/domain/src/exception.base.ts#L4
 
 export interface SerializedError {
-  message: string
-  code: string
-  correlationId?: string
-  stack?: string
-  cause?: string
-  metadata?: unknown
+  message: string;
+  code: string;
+  correlationId?: string;
+  stack?: string;
+  cause?: string;
+  metadata?: unknown;
   /**
    * ^ Consider adding optional `metadata` object to
    * exceptions (if language doesn't support anything
@@ -24,9 +24,9 @@ export interface SerializedError {
  * @extends {Error}
  */
 export abstract class BaseError extends Error {
-  abstract code: string
+  abstract code: string;
 
-  public readonly correlationId?: string
+  public readonly correlationId?: string;
 
   /**
    *
@@ -37,13 +37,14 @@ export abstract class BaseError extends Error {
    */
   constructor(
     override readonly message: string,
-    correlationId?: string,
-    readonly cause?: Error,
+    readonly cause?: unknown,
     readonly metadata?: unknown,
+    correlationId?: string
   ) {
-    super(message)
-    Error.captureStackTrace(this, this.constructor)
-    this.correlationId = correlationId
+    super(message);
+    Error.captureStackTrace(this, this.constructor);
+    this.correlationId = correlationId;
+    this.name = this.constructor.name;
   }
 
   /**
@@ -61,6 +62,6 @@ export abstract class BaseError extends Error {
       correlationId: this.correlationId,
       cause: JSON.stringify(this.cause),
       metadata: this.metadata,
-    }
+    };
   }
 }
