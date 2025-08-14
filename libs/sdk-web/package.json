@@ -5,12 +5,13 @@
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
-  "dependencies": {
-    "@swc/helpers": "~0.5.11",
-    "@t-tech/invest-shared": "0.0.1"
-  },
   "scripts": {
     "test": "node --test --import=tsx ./**/*.test.ts"
+  },
+  "dependencies": {
+    "@swc/helpers": "~0.5.11",
+    "@t-tech/invest-shared": "0.0.1",
+    "ix": "^7.0.0"
   },
   "peerDependencies": {
     "@t-tech/invest-grpc-web": "0.0.1"
