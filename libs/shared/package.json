@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "scripts": {
-    "test": "node --test --import=tsx ./**/*.test.ts 'Decimal class - chain operations'"
+    "test": "node --test --import=tsx ./**/*.test.ts"
   },
   "dependencies": {
     "@swc/helpers": "~0.5.11",

@@ -11,3 +11,7 @@ export class InputParamsNotValidDecimalError extends BaseError {
 export class UnknownDecimalError extends BaseError {
   override code = 'UnknownDecimalError';
 }
+
+export class CannotConvertToPrimitivesDecimalError extends BaseError {
+  override code = 'CannotConvertToPrimitivesDecimalError';
+}

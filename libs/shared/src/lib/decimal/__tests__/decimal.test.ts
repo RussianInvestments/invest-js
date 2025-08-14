@@ -8,7 +8,7 @@ test('Decimal class - constructor with string input', () => {
 });
 
 test('Decimal class - constructor with units and nano', () => {
-  const d = new Decimal({ units: '123', nano: '456000000' });
+  const d = new Decimal({ units: 123, nano: 456000000 });
   assert.strictEqual(d.toString(), '123.456');
 });
 
@@ -54,7 +54,7 @@ test('Decimal class - large numbers', () => {
 });
 
 test('Decimal class - precision with nano', () => {
-  const d = new Decimal({ units: '0', nano: '123456789' });
+  const d = new Decimal({ units: 0, nano: 123456789 });
   assert.strictEqual(d.toString(), '0.123456789');
 });
 
@@ -116,18 +116,6 @@ test('Decimal - constructor: null input should throw InputParamsNotValidDecimalE
     () => {
       // @ts-expect-error Testing invalid input
       new Decimal(null);
-    },
-    {
-      name: 'InputParamsNotValidDecimalError',
-      message: 'Input params is empty',
-    }
-  );
-});
-
-test('Decimal - constructor: empty units and nano should throw InputParamsNotValidDecimalError', () => {
-  assert.throws(
-    () => {
-      new Decimal({ units: '', nano: '' });
     },
     {
       name: 'InputParamsNotValidDecimalError',
@@ -301,4 +289,90 @@ test('Decimal - subtract: invalid Decimal instance should throw UnknownDecimalEr
       message: 'Input params is not Decimal',
     }
   );
+});
+
+test('Decimal - toPrimitives: valid decimal should return correct units and nano', () => {
+  const d = new Decimal('123.456789000');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: 123,
+    nano: 456789000,
+  });
+});
+
+test('Decimal - toPrimitives: decimal with trailing zeros should convert successfully', () => {
+  const d = new Decimal('0.123456789');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: 0,
+    nano: 123456789,
+  });
+});
+
+test('Decimal - toPrimitives: zero fractional part should be handled correctly', () => {
+  const d = new Decimal('456.000000000');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: 456,
+    nano: 0,
+  });
+});
+
+test('Decimal - toPrimitives: decimal with non-zero ending should throw CannotConvertToPrimitivesDecimalError', () => {
+  assert.throws(
+    () => {
+      const d = new Decimal('0.1234567891');
+      d.toPrimitives();
+    },
+    {
+      name: 'CannotConvertToPrimitivesDecimalError',
+      message: 'Cannot convert to primitives',
+    }
+  );
+});
+
+test('Decimal - toPrimitives: decimal with trailing non-zero should throw CannotConvertToPrimitivesDecimalError', () => {
+  assert.throws(
+    () => {
+      const d = new Decimal('123.45678900001');
+      d.toPrimitives();
+    },
+    {
+      name: 'CannotConvertToPrimitivesDecimalError',
+      message: 'Cannot convert to primitives',
+    }
+  );
+});
+
+test('Decimal - toPrimitives: negative decimal should convert correctly', () => {
+  const d = new Decimal('-123.456789000');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: -123,
+    nano: 456789000,
+  });
+});
+
+test('Decimal - toPrimitives: very small decimal should convert correctly', () => {
+  const d = new Decimal('0.000000001');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: 0,
+    nano: 1,
+  });
+});
+
+test('Decimal - toPrimitives: large decimal should convert correctly', () => {
+  const d = new Decimal('1234567890.123456789');
+  const primitives = d.toPrimitives();
+
+  assert.deepStrictEqual(primitives, {
+    units: 1234567890,
+    nano: 123456789,
+  });
 });

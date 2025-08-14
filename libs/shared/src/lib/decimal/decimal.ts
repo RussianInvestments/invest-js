@@ -1,16 +1,17 @@
 import Big from 'big.js';
 import {
+  CannotConvertToPrimitivesDecimalError,
   DivisionByZeroDecimalError,
   InputParamsNotValidDecimalError,
   UnknownDecimalError,
 } from './decimal.errors';
 
-export type DecimalInput =
-  | {
-      units: string;
-      nano: string;
-    }
-  | string;
+export type DecimalPrimitives = {
+  units: number;
+  nano: number;
+};
+
+export type DecimalInput = DecimalPrimitives | string;
 
 export class Decimal {
   private readonly _value: Big;
@@ -29,10 +30,9 @@ export class Decimal {
     if (
       (typeof input === 'string' && input.trim() !== '') ||
       (typeof input === 'object' &&
-        input?.units &&
-        input.nano &&
-        input.units.trim() !== '' &&
-        input.nano.trim() !== '')
+        input !== null &&
+        typeof input.units === 'number' &&
+        typeof input.nano === 'number')
     ) {
       this._value = Decimal.toBig(input);
       return;
@@ -155,5 +155,30 @@ export class Decimal {
    */
   public toString(): string {
     return this._value.toString();
+  }
+
+  /**
+   * Converts the Decimal instance to its primitive representation.
+   *
+   * @returns {DecimalPrimitives} An object with `units` and `nano` properties.
+   * @throws {CannotConvertToPrimitivesDecimalError} If the value cannot be converted to primitives,
+   * for example, if the fractional part does not end with zero.
+   */
+  public toPrimitives(): DecimalPrimitives {
+    // converts to string with rounding up to 10 digits after the decimal point
+    // Why round up? Because we need to check if the fractional part ends with zero and it is nano
+    const stringRepresentation = this._value.toFixed(10, 3);
+
+    const integerPart = stringRepresentation.split('.')[0];
+    const fractionalPart = stringRepresentation.split('.')[1];
+
+    if (fractionalPart[fractionalPart.length - 1] !== '0') {
+      throw new CannotConvertToPrimitivesDecimalError('Cannot convert to primitives');
+    }
+
+    return {
+      units: Number(integerPart),
+      nano: Number(fractionalPart.slice(0, -1)),
+    };
   }
 }

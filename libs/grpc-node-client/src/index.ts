@@ -69,13 +69,41 @@ export type {
   InstrumentType,
   InstrumentStatus,
   SecurityTradingStatus,
-  PriceType,
-  ResultSubscriptionStatus,
   MoneyValue,
   Quotation,
+  ErrorDetail,
+  Ping,
 } from '../compiled/common';
 
+export { PriceType, ResultSubscriptionStatus } from '../compiled/common';
+
 export type { GetAccountsRequest, GetAccountsResponse } from '../compiled/users';
+
+export type {
+  OrderState,
+  GetOrdersRequest,
+  GetOrdersResponse,
+  PostOrderRequest,
+  PostOrderResponse,
+  PostOrderAsyncRequest,
+  PostOrderAsyncResponse,
+  OrderStateStreamRequest,
+  OrderStateStreamResponse,
+  TradesStreamRequest,
+  TradesStreamResponse,
+  SubscriptionResponse,
+  OrderStateStreamResponse_OrderState,
+} from '../compiled/orders';
+
+export {
+  OrderDirection,
+  OrderType,
+  TimeInForceType,
+  OrderExecutionReportStatus,
+  OrderStateStreamResponse_StatusCauseInfo,
+  OrderStateStreamResponse_MarkerType,
+  OrderTrade,
+} from '../compiled/orders';
 
 export type {
   PositionsRequest,
