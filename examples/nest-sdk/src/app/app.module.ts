@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { CONFIGS } from './configs';
 import { InvestSdkModule } from './invest-sdk';
 import { PortfolioModule } from './portfolio';
+import { OrdersModule } from './orders';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { PortfolioModule } from './portfolio';
       load: [...CONFIGS],
     }),
     InvestSdkModule,
-    PortfolioModule
+    PortfolioModule,
+    OrdersModule,
   ],
 })
 export class AppModule {}

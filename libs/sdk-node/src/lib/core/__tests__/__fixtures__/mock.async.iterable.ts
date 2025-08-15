@@ -3,7 +3,7 @@ export function createAsyncIterable<T>(values: T[]): AsyncIterable<T> {
     [Symbol.asyncIterator]: () => {
       let index = 0;
       return {
-        next: () => {
+        next: async () => {
           if (index < values.length) {
             return Promise.resolve({ value: values[index++], done: false });
           } else {

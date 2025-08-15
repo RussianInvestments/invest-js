@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@t-tech/invest-shared": "0.0.1",
-    "ix": "^7.0.0"
+    "rxjs": "^7.8.0"
   },
   "peerDependencies": {
     "@tinkoff/grpc-node-client": "0.0.1"

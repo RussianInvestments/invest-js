@@ -2,18 +2,17 @@ import { OrderExecutionReportStatus, OrderStateStreamRequest } from '@tinkoff/gr
 import { APIService, BaseCommand } from '../../shared';
 import { SuccessOrderStreamItem } from '../types';
 import { OrderStateStreamMapper } from '../mappers';
-import { filter, map } from 'ix/asynciterable/operators';
-import { from } from 'ix/asynciterable';
+import { filter, from, map, Observable } from 'rxjs';
 
-export interface GetSuccessOrdersInput extends OrderStateStreamRequest {}
+export interface GetSuccessOrdersStreamInput extends OrderStateStreamRequest {}
 
-export interface GetSuccessOrdersOutput extends AsyncIterable<SuccessOrderStreamItem> {}
+export interface GetSuccessOrdersStreamOutput extends Observable<SuccessOrderStreamItem> {}
 
-export class GetSuccessOrdersCommand extends BaseCommand<
-  GetSuccessOrdersInput,
-  GetSuccessOrdersOutput
+export class GetSuccessOrdersStreamCommand extends BaseCommand<
+  GetSuccessOrdersStreamInput,
+  GetSuccessOrdersStreamOutput
 > {
-  public override call(client: APIService): GetSuccessOrdersOutput {
+  public override call(client: APIService): GetSuccessOrdersStreamOutput {
     const asyncIterable = client.ordersStream.orderStateStream(this.options);
 
     return from(asyncIterable).pipe(

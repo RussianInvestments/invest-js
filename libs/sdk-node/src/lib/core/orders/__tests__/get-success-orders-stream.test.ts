@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { test, describe } from 'node:test';
 import assert from 'node:assert';
+import { firstValueFrom, take, toArray } from 'rxjs';
 import { Decimal } from '@t-tech/invest-shared';
 import { Money } from '../../shared/money';
 import { APIService } from '../../shared';
@@ -8,76 +8,20 @@ import {
   OrderExecutionReportStatus,
   OrderStateStreamRequest,
   OrderStateStreamResponse,
-  OrderStateStreamResponse_OrderState,
 } from '@tinkoff/grpc-node-client';
-import type { OrderStreamItem, OrderTradeInformation } from '../types';
-import { GetSuccessOrdersCommand } from '../commands/get-success-orders-stream';
+import type { SuccessOrderStreamItem, OrderTradeInformation } from '../types';
 import { createAsyncIterable } from '../../__tests__';
+import { GetSuccessOrdersStreamCommand } from '../commands/get-success-orders-stream';
+import { createMockOrderState } from './__fixtures__';
 
-describe('GetSuccessOrdersCommand', () => {
+describe('GetSuccessOrdersStreamCommand', () => {
   test('должен фильтровать только успешные ордера и преобразовывать поля', async () => {
     const mockRequest: OrderStateStreamRequest = {
       accounts: ['account-123'],
     };
 
-    const mockOrderState: OrderStateStreamResponse_OrderState = {
-      orderId: 'order-123',
-      executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL,
-      initialOrderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 500000000,
-      },
-      orderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 250000000,
-      },
-      amount: {
-        currency: 'USD',
-        units: 500,
-        nano: 0,
-      },
-      executedOrderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 500000000,
-      },
-      trades: [
-        {
-          tradeId: 'trade-1',
-          price: {
-            units: 100,
-            nano: 500000000,
-          },
-          quantity: 5,
-          dateTime: new Date(),
-        },
-      ],
-      clientCode: 'client-123',
-      createdAt: new Date('2025-01-01T00:00:00Z'),
-      statusInfo: undefined,
-      ticker: 'TCSG',
-      classCode: 'TQBR',
-      lotSize: 1,
-      direction: 0,
-      timeInForce: 0,
-      orderType: 0,
-      accountId: 'account-123',
-      currency: 'USD',
-      lotsRequested: 5,
-      lotsExecuted: 5,
-      lotsLeft: 0,
-      lotsCancelled: 0,
-      completionTime: new Date('2025-01-01T00:01:00Z'),
-      exchange: 'MOEX',
-      instrumentUid: 'instrument-123',
-    };
-
     const mockGrpcResponse: OrderStateStreamResponse = {
-      orderState: mockOrderState,
-      ping: undefined,
-      subscription: undefined,
+      orderState: createMockOrderState(),
     };
 
     const mockAPIService = {
@@ -86,13 +30,12 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: OrderStreamItem[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 1);
     const output = results[0];
@@ -104,7 +47,6 @@ describe('GetSuccessOrdersCommand', () => {
       OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL
     );
 
-    // Проверяем Money поля
     assert.ok(orderState?.initialOrderPrice instanceof Money);
     assert.strictEqual(orderState?.initialOrderPrice?.currency, 'USD');
     assert.strictEqual(orderState?.initialOrderPrice?.decimal.toString(), '100.5');
@@ -121,7 +63,6 @@ describe('GetSuccessOrdersCommand', () => {
     assert.strictEqual(orderState?.executedOrderPrice?.currency, 'USD');
     assert.strictEqual(orderState?.executedOrderPrice?.decimal.toString(), '100.5');
 
-    // Проверяем trades
     assert.strictEqual(orderState?.trades.length, 1);
     const trade: OrderTradeInformation = orderState?.trades[0];
     assert.strictEqual(trade.tradeId, 'trade-1');
@@ -130,51 +71,15 @@ describe('GetSuccessOrdersCommand', () => {
     assert.strictEqual(trade.price.toString(), '100.5');
   });
 
-  test('должен игнорировать ордера, не соответствующие статусу EXECUTION_REPORT_STATUS_FILL', async () => {
+  test('должен игнорировать ордера с некорректным статусом', async () => {
     const mockRequest: OrderStateStreamRequest = {
       accounts: ['account-123'],
     };
 
     const mockGrpcResponse: OrderStateStreamResponse = {
-      orderState: {
-        orderId: 'order-456',
+      orderState: createMockOrderState({
         executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_REJECTED,
-        trades: [],
-        direction: 0,
-        timeInForce: 0,
-        orderType: 0,
-        initialOrderPrice: {
-          currency: 'USD',
-          units: 100,
-          nano: 500000000,
-        },
-        orderPrice: {
-          currency: 'USD',
-          units: 100,
-          nano: 250000000,
-        },
-        executedOrderPrice: {
-          currency: 'USD',
-          units: 100,
-          nano: 500000000,
-        },
-        accountId: 'account-123',
-        ticker: 'SBER',
-        classCode: 'TQBR',
-        lotSize: 1,
-        createdAt: new Date(),
-        statusInfo: undefined,
-        currency: 'USD',
-        lotsRequested: 10,
-        lotsExecuted: 0,
-        lotsLeft: 10,
-        lotsCancelled: 0,
-        completionTime: undefined,
-        exchange: 'MOEX',
-        instrumentUid: 'instrument-456',
-        clientCode: 'client-456',
-        marker: undefined,
-      },
+      }),
     };
 
     const mockAPIService = {
@@ -183,52 +88,29 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: any[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 0);
   });
 
-  test('должен корректно обрабатывать отсутствующие поля', async () => {
+  test('должен обрабатывать отсутствующие поля', async () => {
     const mockRequest: OrderStateStreamRequest = {
       accounts: ['account-123'],
     };
 
     const mockGrpcResponse: OrderStateStreamResponse = {
-      orderState: {
-        orderId: 'order-789',
-        executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL,
-        trades: [],
-        direction: 0,
-        timeInForce: 0,
-        orderType: 0,
-        accountId: 'account-123',
-        ticker: 'SBER',
-        classCode: 'TQBR',
-        lotSize: 1,
-        createdAt: new Date(),
-        statusInfo: undefined,
-        currency: 'USD',
-        lotsRequested: 10,
-        lotsExecuted: 10,
-        lotsLeft: 0,
-        lotsCancelled: 0,
-        completionTime: new Date(),
-        exchange: 'MOEX',
-        instrumentUid: 'instrument-789',
-        clientCode: 'client-789',
-        marker: undefined,
-        // Все опциональные поля отсутствуют
+      orderState: createMockOrderState({
         initialOrderPrice: undefined,
         orderPrice: undefined,
         amount: undefined,
         executedOrderPrice: undefined,
-      },
+        trades: [],
+      }),
     };
 
     const mockAPIService = {
@@ -237,13 +119,12 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: { orderState?: any }[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 1);
     const output = results[0];
@@ -261,97 +142,27 @@ describe('GetSuccessOrdersCommand', () => {
       accounts: ['account-123'],
     };
 
-    const mockOrderState1: OrderStateStreamResponse_OrderState = {
-      orderId: 'order-123',
-      executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL,
-      initialOrderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 500000000,
-      },
-      orderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 250000000,
-      },
-      amount: {
-        currency: 'USD',
-        units: 500,
-        nano: 0,
-      },
-      executedOrderPrice: {
-        currency: 'USD',
-        units: 100,
-        nano: 500000000,
-      },
-      trades: [
-        {
-          tradeId: 'trade-1',
-          price: {
+    const mockGrpcResponses: OrderStateStreamResponse[] = [
+      {
+        orderState: createMockOrderState({
+          orderId: 'order-123',
+          initialOrderPrice: {
+            currency: 'USD',
             units: 100,
             nano: 500000000,
           },
-          quantity: 5,
-          dateTime: new Date(),
-        },
-      ],
-      clientCode: 'client-123',
-      createdAt: new Date('2025-01-01T00:00:00Z'),
-      statusInfo: undefined,
-      ticker: 'TCSG',
-      classCode: 'TQBR',
-      lotSize: 1,
-      direction: 0,
-      timeInForce: 0,
-      orderType: 0,
-      accountId: 'account-123',
-      currency: 'USD',
-      lotsRequested: 5,
-      lotsExecuted: 5,
-      lotsLeft: 0,
-      lotsCancelled: 0,
-      completionTime: new Date('2025-01-01T00:01:00Z'),
-      exchange: 'MOEX',
-      instrumentUid: 'instrument-123',
-      marker: undefined,
-    };
-
-    const mockOrderState2: OrderStateStreamResponse_OrderState = {
-      orderId: 'order-456',
-      executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_FILL,
-      initialOrderPrice: {
-        currency: 'EUR',
-        units: 200,
-        nano: 0,
+        }),
       },
-      orderPrice: undefined,
-      amount: undefined,
-      executedOrderPrice: undefined,
-      trades: [],
-      clientCode: 'client-123',
-      createdAt: new Date('2025-01-01T00:00:00Z'),
-      statusInfo: undefined,
-      ticker: 'TCSG',
-      classCode: 'TQBR',
-      lotSize: 1,
-      direction: 0,
-      timeInForce: 0,
-      orderType: 0,
-      accountId: 'account-123',
-      currency: 'EUR',
-      lotsRequested: 10,
-      lotsExecuted: 10,
-      lotsLeft: 0,
-      lotsCancelled: 0,
-      completionTime: new Date('2025-01-01T00:01:00Z'),
-      exchange: 'MOEX',
-      instrumentUid: 'instrument-456',
-      marker: undefined,
-    };
-
-    const mockGrpcResponses: OrderStateStreamResponse[] = [
-      { orderState: mockOrderState1 },
-      { orderState: mockOrderState2 },
+      {
+        orderState: createMockOrderState({
+          orderId: 'order-456',
+          initialOrderPrice: {
+            currency: 'EUR',
+            units: 200,
+            nano: 0,
+          },
+        }),
+      },
     ];
 
     const mockAPIService = {
@@ -360,24 +171,18 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: OrderStreamItem[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(2), toArray())
+    );
 
     assert.strictEqual(results.length, 2);
-
-    const [order1, order2] = results;
-
-    assert.strictEqual(order1.orderState?.orderId, 'order-123');
-    assert.strictEqual(order2.orderState?.orderId, 'order-456');
-    assert.strictEqual(order1.orderState?.initialOrderPrice?.currency, 'USD');
-    assert.strictEqual(order1.orderState?.initialOrderPrice?.decimal.toString(), '100.5');
-    assert.strictEqual(order2.orderState?.initialOrderPrice?.currency, 'EUR');
-    assert.strictEqual(order2.orderState?.initialOrderPrice?.decimal.toString(), '200');
+    assert.strictEqual(results[0].orderState?.orderId, 'order-123');
+    assert.strictEqual(results[1].orderState?.orderId, 'order-456');
+    assert.strictEqual(results[0].orderState?.initialOrderPrice?.decimal.toString(), '100.5');
+    assert.strictEqual(results[1].orderState?.initialOrderPrice?.decimal.toString(), '200');
   });
 
   test('должен игнорировать ping и subscription в OrderStateStreamResponse', async () => {
@@ -405,13 +210,12 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: any[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 0);
   });
@@ -431,13 +235,12 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: any[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 0);
   });
@@ -447,63 +250,20 @@ describe('GetSuccessOrdersCommand', () => {
       accounts: ['account-123'],
     };
 
-    const mockOrderState: OrderStateStreamResponse_OrderState = {
-      orderId: 'order-partial-1',
-      executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_PARTIALLYFILL,
-      initialOrderPrice: {
-        currency: 'USD',
-        units: 200,
-        nano: 0,
-      },
-      orderPrice: {
-        currency: 'USD',
-        units: 200,
-        nano: 0,
-      },
-      amount: {
-        currency: 'USD',
-        units: 1000,
-        nano: 0,
-      },
-      executedOrderPrice: {
-        currency: 'USD',
-        units: 200,
-        nano: 0,
-      },
-      trades: [
-        {
-          tradeId: 'trade-partial-1',
-          price: {
-            units: 200,
-            nano: 0,
-          },
-          quantity: 3,
-          dateTime: new Date(),
-        },
-      ],
-      clientCode: 'client-123',
-      createdAt: new Date('2025-01-01T00:00:00Z'),
-      statusInfo: undefined,
-      ticker: 'TCSG',
-      classCode: 'TQBR',
-      lotSize: 1,
-      direction: 0,
-      timeInForce: 0,
-      orderType: 0,
-      accountId: 'account-123',
-      currency: 'USD',
-      lotsRequested: 5,
-      lotsExecuted: 3,
-      lotsLeft: 2,
-      lotsCancelled: 0,
-      completionTime: undefined,
-      exchange: 'MOEX',
-      instrumentUid: 'instrument-123',
-      marker: undefined,
-    };
-
     const mockGrpcResponse: OrderStateStreamResponse = {
-      orderState: mockOrderState,
+      orderState: createMockOrderState({
+        executionReportStatus: OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_PARTIALLYFILL,
+        trades: [
+          {
+            tradeId: 'trade-partial-1',
+            price: { units: 200, nano: 0 },
+            quantity: 3,
+            dateTime: new Date(),
+          },
+        ],
+        lotsExecuted: 3,
+        lotsLeft: 2,
+      }),
     };
 
     const mockAPIService = {
@@ -512,39 +272,24 @@ describe('GetSuccessOrdersCommand', () => {
       },
     } as unknown as APIService;
 
-    const command = new GetSuccessOrdersCommand(mockRequest);
-    const resultAsyncIterable = command.call(mockAPIService);
+    const command = new GetSuccessOrdersStreamCommand(mockRequest);
+    const resultObservable = command.call(mockAPIService);
 
-    const results: OrderStreamItem[] = [];
-    for await (const result of resultAsyncIterable) {
-      results.push(result);
-    }
+    const results: SuccessOrderStreamItem[] = await firstValueFrom(
+      resultObservable.pipe(take(1), toArray())
+    );
 
     assert.strictEqual(results.length, 1);
     const output = results[0];
     const orderState = output.orderState;
 
-    assert.strictEqual(orderState?.orderId, 'order-partial-1');
     assert.strictEqual(
       orderState?.executionReportStatus,
       OrderExecutionReportStatus.EXECUTION_REPORT_STATUS_PARTIALLYFILL
     );
-
-    // Проверяем Money поля
-    assert.ok(orderState?.initialOrderPrice instanceof Money);
-    assert.strictEqual(orderState?.initialOrderPrice?.currency, 'USD');
-    assert.strictEqual(orderState?.initialOrderPrice?.decimal.toString(), '200');
-
-    assert.ok(orderState?.executedOrderPrice instanceof Money);
-    assert.strictEqual(orderState?.executedOrderPrice?.currency, 'USD');
-    assert.strictEqual(orderState?.executedOrderPrice?.decimal.toString(), '200');
-
-    // Проверяем trades
     assert.strictEqual(orderState?.trades.length, 1);
-    const trade: OrderTradeInformation = orderState?.trades[0];
-    assert.strictEqual(trade.tradeId, 'trade-partial-1');
-    assert.strictEqual(trade.quantity, 3);
-    assert.ok(trade.price instanceof Decimal);
-    assert.strictEqual(trade.price.toString(), '200');
+    assert.strictEqual(orderState?.trades[0].tradeId, 'trade-partial-1');
+    assert.strictEqual(orderState?.trades[0].quantity, 3);
+    assert.strictEqual(orderState?.trades[0].price.toString(), '200');
   });
 });
