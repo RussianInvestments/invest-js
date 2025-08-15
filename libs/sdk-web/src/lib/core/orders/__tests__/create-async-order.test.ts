@@ -8,13 +8,14 @@ import { OrderDirection, OrderType, PriceType, TimeInForceType } from '@t-tech/i
 
 describe('CreateAsyncOrderCommand', () => {
   test('должен вызвать postOrderAsync без price', async () => {
-    const expectedRequest = {
+    const expectedRequest: CreateAsyncOrderInput = {
       instrumentId: 'instrument-123',
       quantity: 5,
       direction: OrderDirection.ORDER_DIRECTION_BUY,
       accountId: 'account-123',
       orderType: OrderType.ORDER_TYPE_LIMIT,
       orderId: 'order-123',
+      confirmMarginTrade: false,
     };
 
     const mockAPIService = {
@@ -55,6 +56,7 @@ describe('CreateAsyncOrderCommand', () => {
       accountId: 'account-123',
       orderType: OrderType.ORDER_TYPE_MARKET,
       orderId: 'order-123',
+      confirmMarginTrade: false,
     };
 
     const mockAPIService = {
@@ -77,6 +79,7 @@ describe('CreateAsyncOrderCommand', () => {
       accountId: 'account-123',
       orderType: OrderType.ORDER_TYPE_MARKET,
       orderId: 'order-123',
+      confirmMarginTrade: false,
     };
 
     const command = new CreateAsyncOrderCommand(options);
@@ -98,6 +101,7 @@ describe('CreateAsyncOrderCommand', () => {
       orderId: 'order-123',
       timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
       priceType: PriceType.PRICE_TYPE_CURRENCY,
+      confirmMarginTrade: true,
     };
 
     const mockAPIService = {
@@ -121,6 +125,7 @@ describe('CreateAsyncOrderCommand', () => {
       orderId: 'order-123',
       timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
       priceType: PriceType.PRICE_TYPE_CURRENCY,
+      confirmMarginTrade: true,
     };
 
     const command = new CreateAsyncOrderCommand(options);

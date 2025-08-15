@@ -30,7 +30,7 @@ build:
   extends:
     - .cache::node_modules::pull-only
   script:
-    - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target build --exclude=nest-js --output-style=static
+    - npx nx affected --base=$NX_BASE --head=$NX_HEAD --target build --exclude=nest-js,nest-sdk --output-style=static
   after_script:
     - >
       if [ $CI_JOB_STATUS == 'success' ]; then

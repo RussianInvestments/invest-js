@@ -18,6 +18,7 @@ describe('CreateOrderCommand', () => {
         orderId: 'order-123',
         timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
         priceType: PriceType.PRICE_TYPE_CURRENCY,
+        confirmMarginTrade: false,
       });
       return {
         orderId: 'test-order-id',
@@ -43,6 +44,7 @@ describe('CreateOrderCommand', () => {
       orderId: 'order-123',
       timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
       priceType: PriceType.PRICE_TYPE_CURRENCY,
+      confirmMarginTrade: false,
     };
 
     const command = new CreateOrderCommand(options);
@@ -70,6 +72,7 @@ describe('CreateOrderCommand', () => {
         orderId: 'order-123',
         timeInForce: TimeInForceType.TIME_IN_FORCE_FILL_AND_KILL,
         priceType: PriceType.PRICE_TYPE_POINT,
+        confirmMarginTrade: true,
       });
       return {
         orderId: 'test-order-id',
@@ -96,6 +99,7 @@ describe('CreateOrderCommand', () => {
       orderId: 'order-123',
       timeInForce: TimeInForceType.TIME_IN_FORCE_FILL_AND_KILL,
       priceType: PriceType.PRICE_TYPE_POINT,
+      confirmMarginTrade: true,
     };
 
     const command = new CreateOrderCommand(options);
@@ -117,6 +121,7 @@ describe('CreateOrderCommand', () => {
         orderId: 'order-123',
         timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
         priceType: PriceType.PRICE_TYPE_CURRENCY,
+        confirmMarginTrade: true,
       });
       return {
         orderId: 'test-order-id',
@@ -142,6 +147,7 @@ describe('CreateOrderCommand', () => {
       orderId: 'order-123',
       timeInForce: TimeInForceType.TIME_IN_FORCE_DAY,
       priceType: PriceType.PRICE_TYPE_CURRENCY,
+      confirmMarginTrade: true,
     };
 
     const command = new CreateOrderCommand(options);

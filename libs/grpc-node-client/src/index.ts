@@ -66,8 +66,6 @@ export class NodeApiClient {
 }
 
 export type {
-  InstrumentType,
-  InstrumentStatus,
   SecurityTradingStatus,
   MoneyValue,
   Quotation,
@@ -75,7 +73,12 @@ export type {
   Ping,
 } from '../compiled/common';
 
-export { PriceType, ResultSubscriptionStatus } from '../compiled/common';
+export {
+  PriceType,
+  ResultSubscriptionStatus,
+  InstrumentType,
+  InstrumentStatus,
+} from '../compiled/common';
 
 export type { GetAccountsRequest, GetAccountsResponse } from '../compiled/users';
 
@@ -111,5 +114,35 @@ export type {
   OperationsRequest,
   OperationsResponse,
 } from '../compiled/operations';
+
+export type {
+  InstrumentsRequest,
+  SharesResponse,
+  EtfsResponse,
+  BondsResponse,
+  FuturesResponse,
+  OptionsResponse,
+  AssetsResponse,
+  CurrenciesResponse,
+  TradingSchedulesRequest,
+  TradingSchedulesResponse,
+  GetAssetFundamentalsRequest,
+  GetAssetFundamentalsResponse,
+  GetConsensusForecastsRequest,
+  GetConsensusForecastsResponse,
+  GetBondCouponsRequest,
+  GetBondCouponsResponse,
+  GetDividendsRequest,
+  GetDividendsResponse,
+  IndicativesRequest,
+  IndicativesResponse,
+  RiskRatesRequest,
+  RiskRatesResponse,
+  Bond,
+  Future,
+  Option,
+  Share,
+  Etf,
+} from '../compiled/instruments';
 
 export { OperationState } from '../compiled/operations';
