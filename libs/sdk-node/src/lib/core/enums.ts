@@ -1,2 +1,2 @@
 // common reexported enums
-export { PriceType, InstrumentStatus, InstrumentType } from '@tinkoff/grpc-node-client';
+export { PriceType } from '@tinkoff/grpc-node-client';
