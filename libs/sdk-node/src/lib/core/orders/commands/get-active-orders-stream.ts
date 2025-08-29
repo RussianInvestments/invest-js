@@ -18,6 +18,8 @@ export class GetActiveOrdersStreamCommand extends BaseCommand<
     return from(asyncIterable).pipe(
       filter((item) => !!item.orderState),
       map((value) => OrderStateStreamMapper.map(value)),
+      // TODO: придумать как можно избавиться от !, так как выше есть фильтр
+      // @ts-expect-error Выше есть фильтр
       groupBy((item) => item.orderState.orderId)
     );
   }

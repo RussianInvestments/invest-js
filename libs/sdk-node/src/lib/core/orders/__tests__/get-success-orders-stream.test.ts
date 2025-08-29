@@ -290,6 +290,6 @@ describe('GetSuccessOrdersStreamCommand', () => {
     assert.strictEqual(orderState?.trades.length, 1);
     assert.strictEqual(orderState?.trades[0].tradeId, 'trade-partial-1');
     assert.strictEqual(orderState?.trades[0].quantity, 3);
-    assert.strictEqual(orderState?.trades[0].price.toString(), '200');
+    assert.strictEqual(orderState?.trades[0].price?.toString(), '200');
   });
 });

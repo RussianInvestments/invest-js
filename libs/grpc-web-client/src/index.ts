@@ -71,15 +71,10 @@ export class WebApiClient {
   }
 }
 
-export type {
-  SecurityTradingStatus,
-  MoneyValue,
-  Quotation,
-  ErrorDetail,
-  Ping,
-} from '../compiled/common';
+export { MoneyValue, Quotation, ErrorDetail, Ping } from '../compiled/common';
 
 export {
+  SecurityTradingStatus,
   PriceType,
   ResultSubscriptionStatus,
   InstrumentType,
@@ -152,3 +147,47 @@ export type {
 } from '../compiled/instruments';
 
 export { OperationState } from '../compiled/operations';
+
+export {
+  LastPriceType,
+  CandleInterval,
+  GetTechAnalysisRequest_TypeOfPrice,
+  GetTechAnalysisRequest_IndicatorType,
+  GetTechAnalysisRequest_IndicatorInterval,
+  TradeDirection,
+  CandleSource,
+  CandleSubscription,
+  OrderBookType,
+  OrderBookSubscription,
+  TradeSourceType,
+  SubscriptionStatus,
+  SubscriptionAction,
+} from '../compiled/marketdata';
+
+export type {
+  MarketDataServerSideStreamRequest,
+  MarketDataResponse,
+  GetCandlesRequest,
+  GetCandlesResponse,
+  HistoricCandle,
+  GetOrderBookRequest,
+  GetOrderBookResponse,
+  Order,
+  OrderBook,
+  GetLastTradesRequest,
+  GetLastTradesResponse,
+  Trade,
+  GetTechAnalysisRequest,
+  GetTechAnalysisResponse,
+  GetTechAnalysisRequest_Deviation,
+  GetTechAnalysisRequest_Smoothing,
+  GetTradingStatusesRequest,
+  GetTradingStatusesResponse,
+  GetLastPricesRequest,
+  GetLastPricesResponse,
+  GetClosePricesRequest,
+  GetClosePricesResponse,
+  LastPrice,
+  InstrumentClosePriceResponse,
+  Candle,
+} from '../compiled/marketdata';
